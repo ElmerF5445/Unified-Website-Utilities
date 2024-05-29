@@ -1,0 +1,160 @@
+@media only screen and (max-width: 750px){
+    .Subwindow{
+        width: calc(100% - 40px);
+        height: calc(100% - 40px);
+        padding: 20px;
+    }
+    .Modal{
+        width: calc(100% - 40px);
+        height: calc(100% - 40px);
+        padding: 20px;
+    }
+    .Header_PageNavigation_Title{
+        display: none;
+    }
+    .Header_PageNavigation_Icon{
+        margin-right: 0;
+    }
+    :root{
+        --Element-ContentContainer-MarginnedWidth: calc(100% - 40px);
+    }   
+    .Ribbon{
+        /* height: 50px; */
+        /* width: fit-content; */
+    }
+    .Ribbon_Section{
+        height: 35px;
+
+    }
+}
+
+@media only screen and (max-width: 700px){
+    .Header_StatusTray{
+        display: none;
+    }
+    .Header_PageNavigation_Menu{
+        left: 0px;
+        width: 100%;
+        bottom: 0px;
+        
+        /* margin-bottom: 20px; */
+    }
+    .Header_PageNavigation_Menu[State="Active"]{
+        display: flex;
+        flex-direction: column;
+    }
+    .Header_StatusTray_Menu{
+        transform: translateX(-100%);
+        /* animation-name: unset;
+        animation-fill-mode: unset; */
+        bottom: 0;
+        width: calc(100% - 10px);
+        /* padding-left: 20px; */
+    }
+    .Header_StatusTray_Menu[State="Active"]{
+        display: flex;
+        flex-direction: column;
+    }
+    .Header_StatusTray_Menu_Close{
+        display: block;
+    }
+    .LoadingScreen_Splash_Window{
+        grid-template-rows: 250px 5px;
+        box-shadow: unset;
+        justify-items: center;
+    }
+    .LoadingScreen_Splash_Window_Image{
+        display: none;
+    }
+    .LoadingScreen_Splash_Window_Main{
+        background-color: unset;
+    }
+    .LoadingScreen_Splash_Window_Loader{
+        width: 60%;
+        background-color: unset;
+    }
+}
+
+@media only screen and (max-width: 650px){
+    .Toasts{
+        height: 150px;
+	    overflow-y: hidden;
+        left: 0;
+        right: 0;
+        margin: auto;
+        margin-top: 75px;
+    }
+    .Header_Content_Title{
+        font-size: 15px;
+    }
+}
+
+@media only screen and (max-height: 400px){
+    .LoadingScreen_Splash_Window{
+        grid-template-rows: 250px 5px;
+        box-shadow: unset;
+        justify-items: center;
+    }
+    .LoadingScreen_Splash_Window_Image{
+        display: none;
+    }
+    .LoadingScreen_Splash_Window_Main{
+        background-color: unset;
+    }
+    .LoadingScreen_Splash_Window_Loader{
+        width: 60%;
+        background-color: unset;
+    }
+}
+
+@media only screen and (max-width: 700px){
+    .Sidebar{
+        width: 100% !important;
+        bottom: 0;
+        height: 43px;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+    }
+    .Sidebar > .Tabs_Vertical_Container_Selector_Item > .Tabs_Vertical_Container_Selector_Item_Text{
+        position: fixed;
+        bottom: 60px;
+        left: 50%;
+        background-color: var(--BG-Color-Overlay-Sidebar);
+        border: solid var(--BG-Color-General-Menus);
+        border-radius: 5px;
+        padding: 10px;
+        padding-left: 20px;
+        padding-right: 20px;
+        /* display: none; */
+        opacity: 0%;
+        transform: translateX(-50%);
+    }
+    .Sidebar > .Tabs_Vertical_Container_Selector_Item:hover > .Tabs_Vertical_Container_Selector_Item_Text{
+        display: block;
+        opacity: 100%;
+        /* transform: translateY(0px); */
+    }
+   .Sidebar > .Tabs_Vertical_Container_Selector_Item[State="Selected"]:hover > .Tabs_Vertical_Container_Selector_Item_Text{
+        border: solid var(--Color-Borders-Hover);
+        background-color: var(--BG-Color-Button-General-Accent-Focus);
+        box-shadow: var(--Element-BoxShadow-Hover);
+    }
+    .Sidebar > .Tabs_Vertical_Container_Selector_Item{
+        margin-left: 5px;
+        min-width: 1px;
+        justify-items: center;
+    }
+    .Sidebar > .Tabs_Vertical_Container_Selector_Item[State="Selected"]{
+        min-width: 80px;
+        grid-template-columns: 1fr 1px;
+    }
+    .MainContent[Style_Margin_Sidebar="Enabled"]{
+        margin-left: unset;
+        width: unset;
+    }
+    .Ribbon[Style_Margin_Sidebar="Enabled"]{
+        margin-left: unset;
+        width: 100%;
+    }
+}
