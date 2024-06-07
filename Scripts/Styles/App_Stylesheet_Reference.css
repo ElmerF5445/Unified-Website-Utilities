@@ -38,6 +38,8 @@
 	--Element-Icon-Brightness: brightness(1);
 	--Element-BackdropBlur: blur(10px);
 	--Element-ContentContainer-MarginnedWidth: 70%;
+	--Element-ContentContainer-Padding-Left: 15%;
+	--Element-ContentContainer-Padding-Right: 15%;
 
 	--BG-Color-Opacitated: rgba(28, 28, 28, 0.50);
 
@@ -60,19 +62,19 @@
 	--BG-Color-LoadingScreen: #241c1c;
 	--BG-Color-LoadingScreen-Splash-NameSpace: #303030;
 	--BG-Color-LoadingScreen-Splash-Loader: #1f1e1e;
-	--BG-Color-Hover: #242424;
+	--BG-Color-Hover: #252525;
 	--BG-Color-Focus: #22116d;
 	--BG-Color-Overlay-Header: #161616;
 	--BG-Color-Overlay-Sidebar: #161616;
 	--BG-Color-Overlay-Ribbon: #161616;
 	--BG-Color-Overlay-CornerButtons: var(--Accent-Color);
 	--BG-Color-Overlay-CornerButtons-Hover: var(--Accent-Color-Hover);
-	--BG-Color-Button-General: #1E1E24;
+	--BG-Color-Button-General: #1b1a1a;
 	--BG-Color-Button-General-Hover: var(--BG-Color-Hover);
 	--BG-Color-Button-General-Focus: var(--BG-Color-Focus);
-	--BG-Color-Button-General-Accent: #111114;
-	--BG-Color-Button-General-Accent-Hover: var(--Color-Borders);
-	--BG-Color-Button-General-Accent-Focus: var(--Accent-Color-Focus);
+	--BG-Color-Button-General-Accent: #242424;
+	--BG-Color-Button-General-Accent-Hover: #3c3a3a;
+	--BG-Color-Button-General-Accent-Focus: var(--Color-Borders-Focus);
 	--BG-Color-Button-ToggleIndicator-Activated: var(--Accent-Color); 
 	--BG-Color-Button-ToggleIndicator-Deactivated: var(--BG-Color-Button-General); 
 	--BG-Color-Button-Dropdown: var(--BG-Color-Button-General); 
@@ -91,6 +93,81 @@
 	--BG-Color-Input-Accent-Hover: var(--Accent-Color-Hover);
 	--BG-Color-Input-Accent-Focus: var(--Accent-Color-Active);
 	--Color-Dividers: #303030;
+	--Color-Borders: var(--Color-Dividers);
+	--Color-Borders-Hover: var(--Accent-Color-Hover);
+	--Color-Borders-Focus: var(--Accent-Color-Focus);
+}
+
+:root-lightMode{
+    --Debug-ElementOutline: none;
+	--BG-Img-Wallpaper-Main: url(../../Assets/Background/BG_SplashScreen.jpg);
+	--BG-Img-Wallpaper-Clock: url(../../Assets/Background/Telephone.png);
+    --BG-Img-Wallpaper-Loading: url(../../Assets/Background/BG_SplashScreen.jpg);
+	--BG-Img-Splash: url(../../Assets/Background/BG_SplashScreen.jpg);
+
+	--Sidebar-Width-Expanded: 300px;
+	--Sidebar-Width-Collapsed: 50px;
+	
+	--Element-Transition-Delay: 0.4s;
+	--Element-Animation-Duration: 0.5s;
+	--Element-BoxShadow: 0cm 0cm 0.28218705792108cm 0.03527338224013cm rgba( 0, 0, 0, 0.25); 
+	--Element-BoxShadow-Hover: 0cm 0cm 0.28218705792108cm 0.03527338224013cm  var(--Accent-Color-Hover); 
+	--Element-Icon-Brightness: brightness(0.25);
+	--Element-BackdropBlur: blur(10px);
+	--Element-ContentContainer-MarginnedWidth: 70%;
+
+	--BG-Color-Opacitated: rgba(28, 28, 28, 0.50);
+
+	--Text-Font-Primary: Alexandria, "Trebuchet MS", "Arial";
+	--Text-Font-Secondary: Roboto, "Arial", "Helvetica";
+	--Text-Font-Numbers: Alexandria, "Arial", "Helvetica";
+	--Text-Color: rgb(31, 31, 31);
+	
+	--Accent-Color: #7b60f0;
+	--Accent-Color-Hover: #5835f3;
+	--Accent-Color-Focus: #4a27e7;
+
+	--BG-Color-Scrollbar: transparent;
+	--BG-Color-Scrollbar-Thumb: var(--Accent-Color);
+	--BG-Color-Scrollbar-Thumb-Hover: var(--Accent-Color-Hover);
+	--BG-Color-Selection: var(--Accent-Color);
+
+	--BG-Color-General: #ffffff;
+	--BG-Color-General-Menus: #ffffff;
+	--BG-Color-LoadingScreen: #ffffff;
+	--BG-Color-LoadingScreen-Splash-NameSpace: #eaeaea;
+	--BG-Color-LoadingScreen-Splash-Loader: #d9d9d9;
+	--BG-Color-Hover: #dedede;
+	--BG-Color-Focus: #c7c7c7;
+	--BG-Color-Overlay-Header: #ffffff;
+	--BG-Color-Overlay-Sidebar: var(--BG-Color-General-Menus);
+	--BG-Color-Overlay-Ribbon: #ffffff;
+	--BG-Color-Overlay-CornerButtons: var(--Accent-Color);
+	--BG-Color-Overlay-CornerButtons-Hover: var(--Accent-Color-Hover);
+	--BG-Color-Button-General: #ffffff;
+	--BG-Color-Button-General-Hover: var(--BG-Color-Hover);
+	--BG-Color-Button-General-Focus: var(--BG-Color-Focus);
+	--BG-Color-Button-General-Accent: #d5d5d59b;
+	--BG-Color-Button-General-Accent-Hover: #b5b5b59b;
+	--BG-Color-Button-General-Accent-Focus: #9c9c9c9b;
+	--BG-Color-Button-ToggleIndicator-Activated: var(--Accent-Color); 
+	--BG-Color-Button-ToggleIndicator-Deactivated: var(--BG-Color-Button-General); 
+	--BG-Color-Button-Dropdown: var(--BG-Color-Button-General); 
+	--BG-Color-Button-Dropdown-Hover: var(--BG-Color-Button-General-Hover);
+	--BG-Color-Button-Dropdown-Active: rgb(54, 54, 54);
+	--BG-Color-Button-Dropdown-Accent: var(--Accent-Color);
+	--BG-Color-Button-Dropdown-Accent-Hover: var(--Accent-Color-Hover);
+	--BG-Color-Button-Dropdown-Accent-Active: var(--Accent-Color-Focus);
+	--BG-Color-Button-Dropdown-List: var(--BG-Color-Button-General);
+	--BG-Color-Button-Dropdown-List-Item-Hover: #282830;
+	--BG-Color-Subwindows: #1a1a1a;
+	--BG-Color-Input: var(--BG-Color-Button-General);
+	--BG-Color-Input-Hover: var(--BG-Color-Button-General-Hover);
+	--BG-Color-Input-Focus: var(--BG-Color-Button-General-Focus);
+	--BG-Color-Input-Accent: var(--Accent-Color);
+	--BG-Color-Input-Accent-Hover: var(--Accent-Color-Hover);
+	--BG-Color-Input-Accent-Focus: var(--Accent-Color-Active);
+	--Color-Dividers: #dfdfdf93;
 	--Color-Borders: var(--Color-Dividers);
 	--Color-Borders-Hover: var(--Accent-Color-Hover);
 	--Color-Borders-Focus: var(--Accent-Color-Focus);

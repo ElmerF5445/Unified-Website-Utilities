@@ -44,7 +44,12 @@ function Element_Style_Animate_Batch_QuerySelector(QuerySelector, Animation_Name
 		Element_QuerySelector[a].style.animationFillMode = Animation_FillMode;
 		Element_QuerySelector[a].style.animationIterationCount = Animation_Iteration;
 		Element_Delay += Animation_Delay;
-		Element_QuerySelector[a].style.animationDelay = Element_Delay;
+		if (Animation_Delay != 0){
+			Element_QuerySelector[a].style.animationDelay = Element_Delay + "ms";
+		} else {
+			Element_QuerySelector[a].style.animationDelay = "0s";
+		}
+		
 	}
 }
 

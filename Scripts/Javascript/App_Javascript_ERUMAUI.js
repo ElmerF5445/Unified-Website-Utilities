@@ -13,11 +13,12 @@ function Header_Toggle_PageNavigation(){
         // Element_Style_Display("Header_PageNavigation_Menu", "grid");
 		Element_Attribute_Set("Header_PageNavigation_Menu", "State", "Active");
         Element_Style_Animate("Header_PageNavigation_Menu", "Overlays_Menu_Open", "0.3s", "forwards");
-		Element_Style_Animate_Batch_QuerySelector(".Header_PageNavigation_Menu_Content", "Overlays_Menu_Content_Open", "0.3s", "forwards", "1", 200);
+		Element_Style_Animate_Batch_QuerySelector(".Header_PageNavigation_Menu_Content", "Overlays_Menu_Content_Open", "0.3s", "forwards", "1", 50);
+		Element_Style_Animate_Batch_QuerySelector(".Header_PageNavigation_Menu_Button_Item", "Overlays_Menu_Content_Open", "0.3s", "forwards", "1", 50);
     } else if (Element_Attribute_Get("Header_PageNavigation_Menu", "State") == "Active"){
         Element_Style_Animate("Header_PageNavigation_Menu", "Overlays_Menu_Close", "0.3s", "forwards");
 		// Element_Attribute_Set("Header_PageNavigation_Menu", "State", "Inactive");
-		Element_Style_Animate_Batch_QuerySelector(".Header_PageNavigation_Menu_Content", "Overlays_Menu_Content_Close", "0.3s", "forwards", "1", 200);
+		Element_Style_Animate_Batch_QuerySelector(".Header_PageNavigation_Menu_Content", "Overlays_Menu_Content_Close", "0.3s", "forwards", "1", 0);
         setTimeout(function(){Element_Attribute_Set("Header_PageNavigation_Menu", "State", "Inactive");}, 300);
     }
 }
@@ -27,10 +28,11 @@ function Header_Toggle_StatusTray(){
         // Element_Style_Display("Header_StatusTray_Menu", "grid");
 		Element_Attribute_Set("Header_StatusTray_Menu", "State", "Active");
         Element_Style_Animate("Header_StatusTray_Menu", "Overlays_Menu_Open", "0.3s", "forwards");
-		Element_Style_Animate_Batch_QuerySelector(".Header_StatusTray_Menu_Content", "Overlays_Menu_Content_Open", "0.3s", "forwards", "1", 200);
+		Element_Style_Animate_Batch_QuerySelector(".Header_StatusTray_Menu_Content", "Overlays_Menu_Content_Open", "0.3s", "forwards", "1", 50);
+		Element_Style_Animate_Batch_QuerySelector(".Header_PageNavigation_Menu_Button_Item", "Overlays_Menu_Content_Open", "0.3s", "forwards", "1", 50);
     } else if (Element_Attribute_Get("Header_StatusTray_Menu", "State") == "Active"){
         Element_Style_Animate("Header_StatusTray_Menu", "Overlays_Menu_Close", "0.3s", "forwards");
-		Element_Style_Animate_Batch_QuerySelector(".Header_StatusTray_Menu_Content", "Overlays_Menu_Content_Close", "0.3s", "forwards", "1", 200);
+		Element_Style_Animate_Batch_QuerySelector(".Header_StatusTray_Menu_Content", "Overlays_Menu_Content_Close", "0.3s", "forwards", "1", 0);
         setTimeout(function(){Element_Attribute_Set("Header_StatusTray_Menu", "State", "Inactive");}, 300);
     }
 }

@@ -115,6 +115,7 @@
         display: flex;
         flex-direction: row;
         justify-content: center;
+        transition: height 0s;
     }
     .Sidebar > .Tabs_Vertical_Container_Selector_Item > .Tabs_Vertical_Container_Selector_Item_Text{
         position: fixed;
@@ -129,6 +130,7 @@
         /* display: none; */
         opacity: 0%;
         transform: translateX(-50%);
+        pointer-events: none;
     }
     .Sidebar > .Tabs_Vertical_Container_Selector_Item:hover > .Tabs_Vertical_Container_Selector_Item_Text{
         display: block;
@@ -156,5 +158,68 @@
     .Ribbon[Style_Margin_Sidebar="Enabled"]{
         margin-left: unset;
         width: 100%;
+    }
+    .Tab_Container_Content_Item[Tabs_Transition="CurrentTab_Upwards"]{
+        animation-name: Tabs_Transition_CurrentTab_Left;
+    }
+    
+    .Tab_Container_Content_Item[Tabs_Transition="NewTab_Upwards"]{
+        animation-name: Tabs_Transition_NewTab_Left;
+    }
+    
+    .Tab_Container_Content_Item[Tabs_Transition="CurrentTab_Downwards"]{
+        animation-name: Tabs_Transition_CurrentTab_Right;
+    }
+    
+    .Tab_Container_Content_Item[Tabs_Transition="NewTab_Downwards"]{
+        animation-name: Tabs_Transition_NewTab_Right;
+    }
+    .Header_SidebarToggle{
+        display: none;
+    }
+    .Header[Style_Margin_SidebarToggle="Enabled"]{
+        margin-left: 0px;
+        width: 100%;
+    }
+    .MainContent[Style_Margin_Header="Enabled"]{
+        margin-top: unset;
+        margin-top: 43px;
+        height: calc(100% - 86px);
+    }    
+    .MainContent[Style_Margin_Ribbon="Enabled"]{
+        margin-top: 33px;
+        height: calc(100% - 76px);
+    }
+    
+    .MainContent[Style_Margin_Header="Enabled"][Style_Margin_Ribbon="Enabled"]{
+        margin-top: 76px;
+        height: calc(100% - 119px);
+    }
+    .Header_PageNavigation_Menu{
+        animation-duration: 0.2s;
+    }
+    @keyframes Overlays_Menu_Open{
+        0% {
+            max-height: 75%;
+            opacity: 0%;
+            transform: translateY(-20px);
+        }
+        100% {
+            max-height: 100%;
+            opacity: 100%;
+            transform: translateY(0px);
+        }
+    }    
+    @keyframes Overlays_Menu_Close{
+        0% {
+            max-height: 100%;
+            opacity: 100%;
+            transform: translateY(0px);
+        }
+        100% {
+            max-height: 0%;
+            opacity: 0%;
+            transform: translateY(-20px);
+        }
     }
 }
