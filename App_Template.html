@@ -389,9 +389,9 @@
                     You are connected to the internet. Features that require an internet connection will function properly.
                 </p>
                 <a href="https://fast.com" target="_blank">
-                    <div class="Header_PageNavigation_Menu_Button_Item">
-                        <img class='Header_PageNavigation_Menu_Button_Item_Icon' src='Assets/Icons/placeholder.png' draggable='false' loading='lazy'/>
-                        <p class="Header_PageNavigation_Menu_Button_Item_Text">
+                    <div class="Header_PageNavigation_Menu_Button_Item General_Button_Primary">
+                        <img class='General_Button_Icon Header_PageNavigation_Menu_Button_Item_Icon' src='Assets/Icons/placeholder.png' draggable='false' loading='lazy' Position="Left"/>
+                        <p class="Header_PageNavigation_Menu_Button_Item_Text" style="color: var(--BG-Color-Button-Primary-Text);">
                             Speedtest
                         </p>
                     </div>
@@ -496,7 +496,7 @@
 				Tab 1
 			</p>
 		</div>
-		<div class="Tabs_Vertical_Container_Selector_Item" id="TabIDHere2" onclick="Tabs_ChangeTab(this.id, 'Vertical')" Tabs_Tab_Title="Tab 2" Tabs_Tab_Target_Container="Content" Tabs_Tab_Target_Tab="tab_TabIDHere2" Tabs_UseRibbon="true" Tabs_Tab_Target_Ribbon="Ribbon_TabIDHere2" Tabs_UseHeaderTitle="true">
+		<div class="Tabs_Vertical_Container_Selector_Item" id="TabIDHere2" onclick="Tabs_ChangeTab(this.id, 'Vertical')" Tabs_Tab_Title="Tab 2" Tabs_Tab_Target_Container="Content" Tabs_Tab_Target_Tab="tab_TabIDHere2" Tabs_UseRibbon="true" Tabs_Tab_Target_Ribbon="Ribbon_TabIDHere2" Tabs_UseHeaderTitle="true" Tabs_UseFullContainer="false">
 			<div class="Tabs_Vertical_Container_Selector_Item_Icon">
 				<img src="Assets/Icons/placeholder.png" class="Tabs_Vertical_Container_Selector_Item_Icon_Icon"/>
 			</div>
@@ -504,7 +504,7 @@
 				Tab 2
 			</p>
 		</div>
-		<div class="Tabs_Vertical_Container_Selector_Item" id="TabIDHere3" onclick="Tabs_ChangeTab(this.id, 'Vertical')" Tabs_Tab_Title="New UI Elements" Tabs_Tab_Target_Container="Content" Tabs_Tab_Target_Tab="tab_TabIDHere3" Tabs_UseRibbon="hide" Tabs_Tab_Target_Ribbon="Ribbon_TabIDHere2" Tabs_UseHeaderTitle="true">
+		<div class="Tabs_Vertical_Container_Selector_Item" id="TabIDHere3" onclick="Tabs_ChangeTab(this.id, 'Vertical')" Tabs_Tab_Title="New UI Elements" Tabs_Tab_Target_Container="Content" Tabs_Tab_Target_Tab="tab_TabIDHere3" Tabs_UseRibbon="hide" Tabs_Tab_Target_Ribbon="Ribbon_TabIDHere2" Tabs_UseHeaderTitle="true" Tabs_UseFullContainer="true">
 			<div class="Tabs_Vertical_Container_Selector_Item_Icon">
 				<h2 class="Tabs_Vertical_Container_Selector_Item_Icon_Icon">
 					3
@@ -541,7 +541,13 @@
                         </div>
                     </div>
                     <div class="General_Button">
-                        General_Button
+                        General_Button (takes the style of secondary buttons)
+                    </div>
+                    <div class="General_Button_Primary">
+                        General_Button_Primary
+                    </div>
+                    <div class="General_Button_Secondary">
+                        General_Button_Secondary
                     </div>
                     <div class="General_Button" onclick="Subwindows_Open('SubwindowIDHere')">
                         Open subwindow

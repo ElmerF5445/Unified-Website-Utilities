@@ -52,25 +52,25 @@
                 "Configuration": "Splash"
             },
             "Features": {
-                "Header": false,
-                "Sidebar": false,
+                "Header": true,
+                "Sidebar": true,
                 "Sidebar_Elements": {
-                    "Toggle": false,
-                    "Container": false,
-                    "Tabs": false
+                    "Toggle": true,
+                    "Container": true,
+                    "Tabs": true
                 },
-                "ClockScreen": false,
-                "LoadingScreen": false,
-                "StatusBar": false,
+                "ClockScreen": true,
+                "LoadingScreen": true,
+                "StatusBar": true,
                 "StatusBar_Elements": {
-                    "EnableAll": false,
-                    "Clock": false,
-                    "Battery": false,
-                    "Connection": false
+                    "EnableAll": true,
+                    "Clock": true,
+                    "Battery": true,
+                    "Connection": true
                 },
-                "Ribbon": false,
-                "Toasts": false,
-                "Projects": false
+                "Ribbon": true,
+                "Toasts": true,
+                "Projects": true
             }
         }
     }

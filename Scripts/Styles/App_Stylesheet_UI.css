@@ -99,7 +99,7 @@ body{
     margin: 0;
     overflow-y: auto;
     scroll-behavior: smooth;
-    background-color: var(--BG-Color-General);
+    background-color: var(--BG-Color-MainView);
 	pointer-events: auto;
 	transition-timing-function: cubic-bezier(0.22, 0, 0, 0.99);
 	position: relative;
@@ -575,34 +575,38 @@ body{
 
 .Header_PageNavigation_Menu_Button_Item{
     padding: 10px;
-	border-radius: 7px;
-	background-color: var(--BG-Color-Button-General);
+	border-radius: 5px;
 	outline: none;
-	width: auto;
-	border-style: solid;
-	border-color: var(--BG-Color-Button-General-Accent);
-	border-width: 3px;
-	background-color: var(--BG-Color-Button-General);
 	cursor: pointer;
 	user-select: none;
 	transition: var(--Element-Transition-Delay);
-    display: grid;
+    display: grid !important;
     grid-template-columns: 20px 1fr;
     grid-gap: 5px;
     align-items: center;
     height: 20px;
+	border-style: solid;
+	border-color: var(--BG-Color-Button-Secondary-Border-Primary);
+	border-bottom-color: var(--BG-Color-Button-Secondary-Border-Secondary);
+	background-color: var(--BG-Color-Button-Secondary);
+	border-width: 3px;
+	color: var(--BG-Color-Button-Secondary-Text);
 }
 
 .Header_PageNavigation_Menu_Button_Item:hover{
-	border-color: var(--BG-Color-Button-General-Accent-Hover);
-	background-color: var(--BG-Color-Button-General-Hover);
-	box-shadow: var(--Element-BoxShadow);
+	border-color: var(--BG-Color-Button-Secondary-Border-Primary-Hover);
+	border-bottom-color: var(--BG-Color-Button-Secondary-Border-Secondary-Hover);
+	color: var(--BG-Color-Button-Secondary-Text-Hover);
+	background-color: var(--BG-Color-Button-Secondary-Hover);
+	box-shadow: var(--Element-BoxShadow-Hover);
 }
 
 .Header_PageNavigation_Menu_Button_Item:active{
-	border-color: var(--BG-Color-Button-General-Accent-Focus);
-	background-color: var(--BG-Color-Button-General-Focus);
-    transform: scale(0.95);
+	border-color: var(--BG-Color-Button-Secondary-Border-Primary-Focus);
+	border-bottom-color: var(--BG-Color-Button-Secondary-Border-Secondary-Focus);
+	color: var(--BG-Color-Button-Secondary-Text-Focus);
+	background-color: var(--BG-Color-Button-Secondary-Focus);
+	box-shadow: var(--Element-BoxShadow-Focus);
 }
 
 .Header_PageNavigation_Menu_Button_Item_Icon{
@@ -1615,14 +1619,15 @@ body{
 }
 
 .Subwindow_Bottom_Button_PrimaryAction{
-	padding: 7px;
+	padding: 8px;
 	border-radius: 5px;
-	background-color: var(--Accent-Color);
+	background-color: var(--BG-Color-Button-Primary);
 	font-family: var(--Text-Font-Secondary), "Arial", "Helvetica";
-	color: var(--Text-Color);
+	color: var(--BG-Color-Button-Primary-Text);
 	outline: none;
 	width: 100%;
-	border: solid var(--BG-Color-Button-General-Accent);
+	border: solid var(--BG-Color-Button-Primary-Border-Primary);
+	border-bottom: solid var(--BG-Color-Button-Primary-Border-Secondary);
 	cursor: pointer;
 	font-size: 17px;
 	text-align: center;
@@ -1636,22 +1641,32 @@ body{
 
 
 .Subwindow_Bottom_Button_PrimaryAction:hover{
-	border-color: var(--Accent-Color-Hover);
+	background-color: var(--BG-Color-Button-Primary-Hover);
+	border-color: var(--BG-Color-Button-Primary-Border-Primary-Hover);
+	border-bottom-color: var(--BG-Color-Button-Primary-Border-Secondary-Hover);
+	box-shadow: var(--Element-BoxShadow-Hover);
+}
+
+.Subwindow_Bottom_Button_PrimaryAction:active{
+	background-color: var(--BG-Color-Button-Primary-Focus);
+	border-color: var(--BG-Color-Button-Primary-Border-Primary-Focus);
+	border-bottom-color: var(--BG-Color-Button-Primary-Border-Secondary-Focus);
 	box-shadow: var(--Element-BoxShadow-Hover);
 }
 
 .Subwindow_Bottom_Button_SecondaryAction{
-	padding: 7px;
+	padding: 8px;
 	border-radius: 5px;
-	background-color: var(--BG-Color-Button-General);
+	background-color: var(--BG-Color-Button-Secondary);
 	font-family: var(--Text-Font-Secondary), "Arial", "Helvetica";
-	color: var(--Text-Color);
+	color: var(--BG-Color-Button-Secondary-Text);
 	outline: none;
 	width: 100%;
 	border-style: solid;
-	border-color: var(--BG-Color-Button-General-Accent);
+	border-color: var(--BG-Color-Button-Secondary-Border-Primary);
+	border-bottom-color: var(--BG-Color-Button-Secondary-Border-Secondary);
 	border-width: 3px;
-	background-color: var(--BG-Color-Button-General);
+	/* background-color: var(--BG-Color-Button-General); */
 	cursor: pointer;
 	font-size: 17px;
 	text-align: center;
@@ -1664,9 +1679,17 @@ body{
 
 
 .Subwindow_Bottom_Button_SecondaryAction:hover{
-	border-color: var(--BG-Color-Button-General-Accent-Hover);
-	background-color: var(--BG-Color-Button-General-Hover);
-	box-shadow: var(--Element-BoxShadow);
+	background-color: var(--BG-Color-Button-Secondary-Hover);
+	border-color: var(--BG-Color-Button-Secondary-Border-Primary-Hover);
+	border-bottom-color: var(--BG-Color-Button-Secondary-Border-Secondary-Hover);
+	box-shadow: var(--Element-BoxShadow-Hover);
+}
+
+.Subwindow_Bottom_Button_PrimaryAction:active{
+	background-color: var(--BG-Color-Button-Secondary-Focus);
+	border-color: var(--BG-Color-Button-Secondary-Border-Primary-Focus);
+	border-bottom-color: var(--BG-Color-Button-Secondary-Border-Secondary-Focus);
+	box-shadow: var(--Element-BoxShadow-Hover);
 }
 
 .Modal{
@@ -1967,18 +1990,19 @@ body{
     color: var(--Text-Color);
 }
 
-.General_Button{
+.General_Button, .General_Button_Secondary{
 	padding: 10px;
 	border-radius: 5px;
-	background-color: var(--BG-Color-Button-General);
+	background-color: var(--BG-Color-Button-Secondary);
 	font-family: var(--Text-Font-Secondary), "Arial", "Helvetica";
-	color: var(--Text-Color);
+	color: var(--BG-Color-Button-Secondary-Text);
 	outline: none;
 	width: auto;
 	border-style: solid;
-	border-color: var(--BG-Color-Button-General-Accent);
+	border-color: var(--BG-Color-Button-Secondary-Border-Primary);
+	border-bottom-color: var(--BG-Color-Button-Secondary-Border-Secondary);
 	border-width: 3px;
-	background-color: var(--BG-Color-Button-General);
+	/* background-color: var(--BG-Color-Button-General); */
 	cursor: pointer;
 	font-size: 17px;
 	text-align: center;
@@ -1991,15 +2015,61 @@ body{
 }
 
 
-.General_Button:hover{
-	border-color: var(--BG-Color-Button-General-Accent-Hover);
-	background-color: var(--BG-Color-Button-General-Hover);
-	box-shadow: var(--Element-BoxShadow);
+.General_Button:hover, .General_Button_Secondary:hover{
+	border-color: var(--BG-Color-Button-Secondary-Border-Primary-Hover);
+	border-bottom-color: var(--BG-Color-Button-Secondary-Border-Secondary-Hover);
+	color: var(--BG-Color-Button-Secondary-Text-Hover);
+	background-color: var(--BG-Color-Button-Secondary-Hover);
+	box-shadow: var(--Element-BoxShadow-Hover);
 }
 
-.General_Button:active{
-	border-color: var(--BG-Color-Button-General-Accent-Focus);
-	background-color: var(--BG-Color-Button-General-Focus);
+.General_Button:active, .General_Button_Secondary:active{
+	border-color: var(--BG-Color-Button-Secondary-Border-Primary-Focus);
+	border-bottom-color: var(--BG-Color-Button-Secondary-Border-Secondary-Focus);
+	color: var(--BG-Color-Button-Secondary-Text-Focus);
+	background-color: var(--BG-Color-Button-Secondary-Focus);
+	box-shadow: var(--Element-BoxShadow-Focus);
+}
+
+.General_Button_Primary{
+	padding: 10px;
+	border-radius: 5px;
+	background-color: var(--BG-Color-Button-Primary);
+	font-family: var(--Text-Font-Secondary), "Arial", "Helvetica";
+	color: var(--BG-Color-Button-Primary-Text);
+	outline: none;
+	width: auto;
+	border-style: solid;
+	border-color: var(--BG-Color-Button-Primary-Border-Primary);
+	border-bottom-color: var(--BG-Color-Button-Primary-Border-Secondary);
+	border-width: 3px;
+	/* background-color: var(--BG-Color-Button-General); */
+	cursor: pointer;
+	font-size: 17px;
+	text-align: center;
+	user-select: none;
+	transition: var(--Element-Transition-Delay);
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+}
+
+
+.General_Button_Primary:hover{
+	border-color: var(--BG-Color-Button-Primary-Border-Primary-Hover);
+	border-bottom-color: var(--BG-Color-Button-Primary-Border-Secondary-Hover);
+	color: var(--BG-Color-Button-Primary-Text-Hover);
+	background-color: var(--BG-Color-Button-Primary-Hover);
+	box-shadow: var(--Element-BoxShadow-Hover);
+}
+
+.General_Button_Primary:active{
+	border-color: var(--BG-Color-Button-Primary-Border-Primary-Focus);
+	border-bottom-color: var(--BG-Color-Button-Primary-Border-Secondary-Focus);
+	color: var(--BG-Color-Button-Primary-Text-Focus);
+	background-color: var(--BG-Color-Button-Primary-Focus);
+	box-shadow: var(--Element-BoxShadow-Focus);
 }
 
 .General_Button[Sizing_Width="Fit_Content"]{

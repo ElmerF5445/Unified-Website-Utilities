@@ -140,6 +140,7 @@ var Tabs_Target_Container_TabList = [];
 var Tabs_Target_Container_TabList_ID = [];
 var Tabs_Target_Container_TabList_ID_Index_CurrentTab;
 var Tabs_Target_Container_TabList_ID_Index_TargetTab;
+var Tabs_MainView_OriginalState;
 function Tabs_ChangeTab(ButtonID, Layout){
 	Tabs_Target_Container_TabList = [];
 	Tabs_Target_Container_TabList_ID = [];
@@ -227,6 +228,14 @@ function Tabs_ChangeTab(ButtonID, Layout){
 	if (document.getElementById(Tabs_Button_ID).getAttribute("Tabs_UseHeaderTitle") == "true"){
 		document.getElementById("pageElement_Header_Title").innerHTML = Tabs_Button_TabTitle;
 	}
+	if (Element_Attribute_Get(Tabs_Button_ID, "Tabs_UseFullContainer") == null){
+		App_Property.Page.MainView.UseFullContainer = Tabs_MainView_OriginalState;
+	} else if (Element_Attribute_Get(Tabs_Button_ID, "Tabs_UseFullContainer") == "true"){
+		App_Property.Page.MainView.UseFullContainer = true;
+	} else if (Element_Attribute_Get(Tabs_Button_ID, "Tabs_UseFullContainer") == "false"){
+		App_Property.Page.MainView.UseFullContainer = false;
+	}
+	Startup_Page_ApplyConfigurations("QuickChange", "ContainerOnly");
 	Tabs_Target_Container.setAttribute("Tabs_CurrentTab", Tabs_Button_Target_Tab);
 }
 
