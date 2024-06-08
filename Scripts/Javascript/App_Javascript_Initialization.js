@@ -130,11 +130,20 @@ async function Startup_Load_File_Properties(PropertiesFileURL) {
   const data = await Startup_Fetch_File_Properties(
     PropertiesFileURL
   );
-  Startup_Page_ApplyConfigurations();
+  Startup_Page_ApplyConfigurations("Initialize");
   return data;
 }
 
-function Startup_Page_ApplyConfigurations() {
+function Startup_Page_ApplyConfigurations(Mode, Parameter) {
+  /* Modes:
+    Initialize - Triggered during the initialization of the page
+    FromFunctions - Triggered by other functions
+    QuickChange - Does not trigger LoadingScreen_Show()
+  */
+ /* Parameters: 
+    null - No value
+    ThisOnly - Does not trigger Startup_Page_ApplyInformation() 
+ */
     // Sets LoadingScreen style
   if (App_Property.LoadingScreen.Configuration == "Black") {
     document
@@ -177,7 +186,9 @@ function Startup_Page_ApplyConfigurations() {
       .getElementById("LoadingScreen_Custom")
       .setAttribute("Display", "grid");
   }
-  LoadingScreen_Show();
+  if (Mode != "QuickChange"){
+    LoadingScreen_Show();
+  }
   Element_Attribute_Set("LoadingScreen_Simple", "Opacitation", "Transparent");
   Element_Attribute_Set("LoadingScreen_Splash", "Opacitation", "Transparent");
 
@@ -195,6 +206,8 @@ function Startup_Page_ApplyConfigurations() {
   // Determines if the main content uses the full container
   if (App_Property.Page.MainView.UseFullContainer == true) {
     Element_Attribute_Set("Content", "Style_Margin", "Disabled");
+  } else {
+    Element_Attribute_Set("Content", "Style_Margin", "Enabled");
   }
 
   // Sets the width for the expanded and collapsed state of the Sidebar
@@ -239,7 +252,81 @@ function Startup_Page_ApplyConfigurations() {
       document.getElementById("Header_PageActions_Menu_Links").appendChild(App_PageAction_Element_Anchor);
     }
   }
-  Startup_Page_ApplyInformation();
+
+  if (App_Property.Features.StatusBar == true || App_Property.Features.ClockScreen == true){
+    Clock_Update_Time();
+    Date_Update_Date();
+    document.getElementById("Header_StatusTray").style.display = null;
+  } else {
+    document.getElementById("Header_StatusTray").style.display = "none";
+  }
+  if (App_Property.Features.StatusBar_Elements.Battery == true || App_Property.Features.ClockScreen == true){
+    Battery_Update_Level();
+  }
+  if (App_Property.Features.StatusBar_Elements.Connection == true ||
+    App_Property.Features.ClockScreen == true
+  ) {
+    Connection_Update_Status();
+  }
+
+  if (App_Property.Features.Header == false) {
+    Element_Attribute_Set("MainContent", "Style_Margin_Header", "Disabled");
+    document.getElementById("Header").style.display = "none";
+    // Element_Attribute_Set("Sidebar", "Style_Margin_Header", "Enabled");
+  } else {
+    Element_Attribute_Set("MainContent", "Style_Margin_Header", "Enabled");
+    document.getElementById("Header").style.display = null;
+  }
+
+  if (App_Property.Sidebar.HideWhenCollapsed == true) {
+    Element_Attribute_Set("MainContent", "Style_Margin_Sidebar", "Disabled");
+    Element_Attribute_Set("Ribbon", "Style_Margin_Sidebar", "Disabled");
+    Element_Attribute_Set("Sidebar", "State", "Collapsed_Hide");
+  } else {
+    Element_Attribute_Set("MainContent", "Style_Margin_Sidebar", "Enabled");
+    Element_Attribute_Set("Ribbon", "Style_Margin_Sidebar", "Enabled");
+    Element_Attribute_Set("Sidebar", "State", "Collapsed");
+  }
+
+  if (App_Property.Features.Sidebar == false) {
+    Element_Attribute_Set("MainContent", "Style_Margin_Sidebar", "Disabled");
+    Element_Attribute_Set("Header", "Style_Margin_Sidebar", "Disabled");
+    Element_Attribute_Set("Ribbon", "Style_Margin_Sidebar", "Disabled");
+    document.getElementById("Sidebar").style.display = "none";
+  } else {
+    Element_Attribute_Set("MainContent", "Style_Margin_Sidebar", "Disabled");
+    Element_Attribute_Set("Header", "Style_Margin_Sidebar", "Enabled");
+    Element_Attribute_Set("Ribbon", "Style_Margin_Sidebar", "Enabled");
+    document.getElementById("Sidebar").style.display = null;
+  }
+
+  if (App_Property.Features.Sidebar_Elements.Toggle == false) {
+    Element_Attribute_Set("Sidebar", "Style_Margin_Header", "Disabled");
+    Element_Attribute_Set("Header", "Style_Margin_SidebarToggle", "Disabled");
+    Element_Attribute_Set("Header", "Style_Margin_SidebarToggle", "Disabled");
+    document.getElementById("Header_SidebarToggle").style.display = "none";
+    // Element_Attribute_Set("Sidebar", "Style_Margin_Header", "Enabled");
+  } else {
+    Element_Attribute_Set("Sidebar", "Style_Margin_Header", "Enabled");
+    Element_Attribute_Set("Header", "Style_Margin_SidebarToggle", "Enabled");
+    Element_Attribute_Set("Header", "Style_Margin_SidebarToggle", "Enabled");
+    document.getElementById("Header_SidebarToggle").style.display = null;
+  }
+
+
+  if (App_Property.Features.Ribbon == false) {
+    Element_Attribute_Set("MainContent", "Style_Margin_Ribbon", "Disabled");
+    document.getElementById("Ribbon").style.display = "none";
+  } else {
+    Element_Attribute_Set("MainContent", "Style_Margin_Ribbon", "Enabled");
+    pageProperty_enableRibbon = 1;
+  }
+
+  
+
+  if (Parameter == null && Parameter != "ThisOnly"){
+    Startup_Page_ApplyInformation();
+  }
 }
 
 function Startup_Page_ApplyInformation() {
@@ -296,50 +383,7 @@ function Startup_Page_HideElements() {
 
 function Startup_Page_AdditionalFunctions() {
   // Specify any additional functions that will be executed on page load here
-  if (App_Property.Features.StatusBar == true || App_Property.Features.ClockScreen == true){
-    Clock_Update_Time();
-    Date_Update_Date();
-  }
-  if (App_Property.Features.StatusBar_Elements.Battery == true || App_Property.Features.ClockScreen == true){
-    Battery_Update_Level();
-  }
-  if (App_Property.Features.StatusBar_Elements.Connection == true ||
-    App_Property.Features.ClockScreen == true
-  ) {
-    Connection_Update_Status();
-  }
-
-  if (App_Property.Features.Header == false) {
-    Element_Attribute_Set("MainContent", "Style_Margin_Header", "Disabled");
-    document.getElementById("Header").style.display = "none";
-    // Element_Attribute_Set("Sidebar", "Style_Margin_Header", "Enabled");
-  }
-
-  if (App_Property.Features.Sidebar == false) {
-    Element_Attribute_Set("MainContent", "Style_Margin_Sidebar", "Disabled");
-    Element_Attribute_Set("Header", "Style_Margin_Sidebar", "Disabled");
-    Element_Attribute_Set("Ribbon", "Style_Margin_Sidebar", "Disabled");
-    document.getElementById("Sidebar").style.display = "none";
-  }
-  if (App_Property.Features.Sidebar_Elements.Toggle == false) {
-    Element_Attribute_Set("Sidebar", "Style_Margin_Header", "Disabled");
-    Element_Attribute_Set("Header", "Style_Margin_SidebarToggle", "Disabled");
-    Element_Attribute_Set("Header", "Style_Margin_SidebarToggle", "Disabled");
-    document.getElementById("Header_SidebarToggle").style.display = "none";
-    // Element_Attribute_Set("Sidebar", "Style_Margin_Header", "Enabled");
-  }
-  if (App_Property.Features.Ribbon == false) {
-    Element_Attribute_Set("MainContent", "Style_Margin_Ribbon", "Disabled");
-    document.getElementById("Ribbon").style.display = "none";
-  } else {
-    Element_Attribute_Set("MainContent", "Style_Margin_Ribbon", "Enabled");
-    pageProperty_enableRibbon = 1;
-  }
-  if (App_Property.Sidebar.HideWhenCollapsed == true) {
-    Element_Attribute_Set("MainContent", "Style_Margin_Sidebar", "Disabled");
-    Element_Attribute_Set("Ribbon", "Style_Margin_Sidebar", "Disabled");
-    Element_Attribute_Set("Sidebar", "State", "Collapsed_Hide");
-  }
+  
   Startup_Page_FinishInitialization();
 }
 

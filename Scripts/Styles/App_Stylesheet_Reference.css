@@ -34,7 +34,8 @@
 	--Element-Transition-Delay: 0.4s;
 	--Element-Animation-Duration: 0.5s;
 	--Element-BoxShadow: 0cm 0cm 0.28218705792108cm 0.03527338224013cm rgba( 0, 0, 0, 0.50); 
-	--Element-BoxShadow-Hover: 0cm 0cm 0.28218705792108cm 0.03527338224013cm  var(--Accent-Color-Hover); 
+	--Element-BoxShadow-Hover: 0cm 0cm 0.28218705792108cm 0.03527338224013cm rgba( 0, 0, 0, 0.50); 
+	/* --Element-BoxShadow-Hover: 0cm 0cm 0.28218705792108cm 0.03527338224013cm  var(--Accent-Color-Hover);  */
 	--Element-Icon-Brightness: brightness(1);
 	--Element-BackdropBlur: blur(10px);
 	--Element-ContentContainer-MarginnedWidth: 70%;
