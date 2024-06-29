@@ -111,7 +111,7 @@
     .Sidebar{
         width: 100% !important;
         bottom: 0;
-        height: 43px;
+        height: 50px;
         display: flex;
         flex-direction: row;
         justify-content: center;

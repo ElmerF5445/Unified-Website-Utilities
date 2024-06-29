@@ -1030,6 +1030,7 @@ body{
     grid-template-columns: 40px 1fr;
     height: 35px;
     padding: 0px;
+	border: solid var(--BG-Color-Overlay-Sidebar);
 }
 
 .Sidebar > div > .Tabs_Vertical_Container_Selector_Item_Icon > .Tabs_Vertical_Container_Selector_Item_Icon_Icon{

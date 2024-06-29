@@ -1,5 +1,5 @@
 /*
-    Properties, starting functions, etc.
+Properties, starting functions, etc.
 */
 
 /* App Information */
@@ -239,7 +239,7 @@ function Startup_Page_ApplyConfigurations(Mode, Parameter) {
     document.getElementById("Header_PageActions_Menu_Links").innerHTML = "";
     if (App_Property.Header.Menu_Contents.Actions.length > 0){
       for (a = 0; a < App_Property.Header.Menu_Contents.Actions.length; a++) {
-        var App_PageAction_Element_HTML = `<div class="Header_PageNavigation_Menu_Button_Item" onclick='${App_Property.Header.Menu_Contents.Actions[a].OnclickFunction}'>
+        var App_PageAction_Element_HTML = `<div class="Header_PageNavigation_Menu_Button_Item" onclick=${App_Property.Header.Menu_Contents.Actions[a].OnclickFunction}>
             <img class='Header_PageNavigation_Menu_Button_Item_Icon' src='${App_Property.Header.Menu_Contents.Actions[a].Icon}' draggable='false' loading='lazy'/>
             <p class="Header_PageNavigation_Menu_Button_Item_Text">
                 ${App_Property.Header.Menu_Contents.Actions[a].Title}
@@ -341,31 +341,31 @@ function Startup_Page_ApplyInformation() {
       document.getElementById("LoadingScreen_Icon_Simple").src =
         App_Property.Page.Icon;
       document.getElementById("LoadingScreen_Title_Simple").innerHTML =
-        App_Info.Title;
+      App_Property.TitleBar_Title;
       document.getElementById("LoadingScreen_Subtitle_Simple").innerHTML =
         App_Property.Page.Title;
       document.getElementById("LoadingScreen_Copyright_Icon_Simple").src =
         App_Info.Copyright_Icon;
       document.getElementById(
         "LoadingScreen_Copyright_Title_Simple"
-      ).innerHTML = App_Info.Copyright_Title;
+      ).innerHTML = App_Property.Copyright_Title;
     } else if (App_Property.LoadingScreen.Configuration == "Splash") {
       document.getElementById("LoadingScreen_Icon_Splash").src =
       App_Property.Page.Icon;
       document.getElementById("LoadingScreen_Title_Splash").innerHTML =
-        App_Info.Title;
+      App_Property.TitleBar_Title;
       document.getElementById("LoadingScreen_Subtitle_Splash").innerHTML =
       App_Property.Page.Title;
       document.getElementById("LoadingScreen_Copyright_Icon_Splash").src =
-        App_Info.Copyright_Icon;
+      App_Info.Copyright_Icon;
       document.getElementById(
         "LoadingScreen_Copyright_Title_Splash"
-      ).innerHTML = App_Info.Copyright_Title;
+      ).innerHTML = App_Property.Copyright_Title;
     }
   }
 
   document.getElementById("Page_Favicon").src = App_Property.Page.Icon;
-  document.getElementById("Page_Title").innerText = App_Info.Title + " | " + App_Property.Page.Title;
+  document.getElementById("Page_Title").innerText = App_Property.TitleBar_Title + " | " + App_Property.Page.Title;
   document.getElementById("Header_PageNavigation_Menu_Title").innerHTML = App_Property.Page.Title;
   document.getElementById("Header_PageNavigation_Icon").src = App_Property.Page.Icon;
   document.getElementById("Header_PageNavigation_Title").innerHTML = App_Property.Header.Title;
