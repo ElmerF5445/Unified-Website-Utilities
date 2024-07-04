@@ -6,6 +6,7 @@
     transition: all var(--Element-Transition-Delay), outline 0s;
 	outline: var(--Debug-ElementOutline);
 	-webkit-tap-highlight-color: transparent;
+	border-width: 3px;
 }
 
 img{

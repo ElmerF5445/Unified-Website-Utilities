@@ -103,10 +103,10 @@
 	--BG-Color-Button-Secondary-Border-Primary-Hover: #3c3a3a;
 	--BG-Color-Button-Secondary-Border-Secondary-Hover: #343232;
 
-	--BG-Color-Button-Secondary-Focus: var(--Accent-Color-Focus);
+	--BG-Color-Button-Secondary-Focus: #242424;
 	--BG-Color-Button-Secondary-Text-Focus: #ffffff;
-	--BG-Color-Button-Secondary-Border-Primary-Focus: #6a50ff;
-	--BG-Color-Button-Secondary-Border-Secondary-Focus: #5739ff;
+	--BG-Color-Button-Secondary-Border-Primary-Focus: #2f2f2f;
+	--BG-Color-Button-Secondary-Border-Secondary-Focus: #2f2f2f;
 
 	--BG-Color-Button-General: var(--BG-Color-Button-Secondary);
 	--BG-Color-Button-General-Text: white;

@@ -348,7 +348,7 @@ function Startup_Page_ApplyInformation() {
         App_Info.Copyright_Icon;
       document.getElementById(
         "LoadingScreen_Copyright_Title_Simple"
-      ).innerHTML = App_Property.Copyright_Title;
+      ).innerHTML = App_Info.Copyright_Title;
     } else if (App_Property.LoadingScreen.Configuration == "Splash") {
       document.getElementById("LoadingScreen_Icon_Splash").src =
       App_Property.Page.Icon;
@@ -360,7 +360,7 @@ function Startup_Page_ApplyInformation() {
       App_Info.Copyright_Icon;
       document.getElementById(
         "LoadingScreen_Copyright_Title_Splash"
-      ).innerHTML = App_Property.Copyright_Title;
+      ).innerHTML = App_Info.Copyright_Title;
     }
   }
 
