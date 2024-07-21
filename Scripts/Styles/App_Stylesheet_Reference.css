@@ -23,10 +23,10 @@
 
 :root{
     --Debug-ElementOutline: none;
-	--BG-Img-Wallpaper-Main: url(../../Assets/Background/BG_SplashScreen.jpg);
-	--BG-Img-Wallpaper-Clock: url(../../Assets/Background/Telephone.png);
-    --BG-Img-Wallpaper-Loading: url(../../Assets/Background/BG_SplashScreen.jpg);
-	--BG-Img-Splash: url(../../Assets/Background/BG_SplashScreen.jpg);
+	--BG-Img-Wallpaper-Main: url(../../Assets/Background/Wallpaper_Main.jpg);
+	--BG-Img-Wallpaper-Clock: url(../../Assets/Background/Clock_Screen.png);
+    --BG-Img-Wallpaper-Loading: url(../../Assets/Background/Splash.png);
+	--BG-Img-Splash: url(../../Assets/Background/Splash.png);
 
 	--Sidebar-Width-Expanded: 300px;
 	--Sidebar-Width-Collapsed: 50px;

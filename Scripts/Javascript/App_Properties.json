@@ -37,13 +37,15 @@
                             "Title": "Action 1",
                             "Link": null,
                             "Icon": "Assets/Icons/icon_home.png",
-                            "OnclickFunction": null
+                            "OnclickFunction": null,
+                            "CloseAfterClick": false
                         },
                         {
                             "Title": "Action 2",
                             "Link": null,
                             "Icon": "Assets/Icons/icon_home.png",
-                            "OnclickFunction": null
+                            "OnclickFunction": null,
+                            "CloseAfterClick": false
                         }
                     ]
                 }
@@ -112,13 +114,15 @@
                             "Title": "Action 1",
                             "Link": null,
                             "Icon": "Assets/Icons/icon_home.png",
-                            "OnclickFunction": null
+                            "OnclickFunction": null,
+                            "CloseAfterClick": false
                         },
                         {
                             "Title": "Action 2",
                             "Link": null,
                             "Icon": "Assets/Icons/icon_home.png",
-                            "OnclickFunction": null
+                            "OnclickFunction": null,
+                            "CloseAfterClick": false
                         }
                     ]
                 }

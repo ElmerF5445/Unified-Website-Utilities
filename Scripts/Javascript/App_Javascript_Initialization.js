@@ -5,13 +5,13 @@ Properties, starting functions, etc.
 /* App Information */
 let App_Info = {
   // Title of the project
-  Title: "ERUMA UI",
+  Title: "Watch List Builder",
   // Title of the project's version
-  Version_Title: "BETA 1.0",
+  Version_Title: "1.0",
   // Version number
   Version_Number: "1.0",
   // Latest compilation date of the project
-  Version_CompilationDate: "20 January 2024",
+  Version_CompilationDate: "5 July 2024",
   // Copyright text that appears in certain menu and screen elements
   Copyright_Title: "Content By ElmerF 2024",
   // Content By ElmerF logo
@@ -248,6 +248,11 @@ function Startup_Page_ApplyConfigurations(Mode, Parameter) {
         var App_PageAction_Element_Anchor = document.createElement('a');
         if (App_Property.Header.Menu_Contents.Actions[a].Link != null){
             App_PageAction_Element_Anchor.setAttribute('href', App_Property.Header.Menu_Contents.Actions[a].Link);
+        }
+        if (App_Property.Header.Menu_Contents.Actions[a].CloseAfterClick != null){
+          if (App_Property.Header.Menu_Contents.Actions[a].CloseAfterClick == true){
+            App_PageAction_Element_Anchor.setAttribute('onclick', "Header_Toggle_PageNavigation()");
+          }
         }
         App_PageAction_Element_Anchor.innerHTML = App_PageAction_Element_HTML;
         document.getElementById("Header_PageActions_Menu_Links").appendChild(App_PageAction_Element_Anchor);
