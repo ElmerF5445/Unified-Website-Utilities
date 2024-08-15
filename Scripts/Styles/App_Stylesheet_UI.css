@@ -2014,6 +2014,8 @@ body{
 	flex-direction: row;
 	justify-content: center;
 	align-items: center;
+
+	outline: solid rgba(0, 0, 0, 0) 3px;
 }
 
 
@@ -2055,6 +2057,8 @@ body{
 	flex-direction: row;
 	justify-content: center;
 	align-items: center;
+
+	outline: solid rgba(0, 0, 0, 0) 3px;
 }
 
 
@@ -2072,6 +2076,10 @@ body{
 	color: var(--BG-Color-Button-Primary-Text-Focus);
 	background-color: var(--BG-Color-Button-Primary-Focus);
 	box-shadow: var(--Element-BoxShadow-Focus);
+}
+
+.General_Button:focus{
+	outline: solid var(--BG-Color-Button-Primary-Border-Primary-Focus) 3px;
 }
 
 .General_Button[Sizing_Width="Fit_Content"]{

@@ -266,6 +266,9 @@ function Startup_Page_ApplyConfigurations(Mode, Parameter) {
     } else {
       document.getElementById("Header_StatusTray").style.display = "none";
     }
+    if (App_Property.Features.StatusBar == false){
+      document.getElementById("Header_StatusTray").style.display = "none";
+    }
     if (App_Property.Features.StatusBar_Elements.Battery == true || App_Property.Features.ClockScreen == true){
       Battery_Update_Level();
     }
@@ -273,6 +276,15 @@ function Startup_Page_ApplyConfigurations(Mode, Parameter) {
       App_Property.Features.ClockScreen == true
     ) {
       Connection_Update_Status();
+    }
+    if (App_Property.Features.StatusBar_Elements.Clock == false){
+      document.getElementById("Header_StatusTray_Clock").style.display = "none";
+    }
+    if (App_Property.Features.StatusBar_Elements.Battery == false){
+      document.getElementById("Header_StatusTray_Battery").style.display = "none";
+    }
+    if (App_Property.Features.StatusBar_Elements.Connection == false){
+      document.getElementById("Header_StatusTray_Extras_InternetStatus").style.display = "none";
     }
 
     if (App_Property.Features.Header == false) {
@@ -317,6 +329,18 @@ function Startup_Page_ApplyConfigurations(Mode, Parameter) {
       Element_Attribute_Set("Header", "Style_Margin_SidebarToggle", "Enabled");
       Element_Attribute_Set("Header", "Style_Margin_SidebarToggle", "Enabled");
       document.getElementById("Header_SidebarToggle").style.display = null;
+    }
+
+    if (App_Property.Features.Sidebar_Elements.Tabs == true){
+      Element_Attribute_Set("Sidebar", "Style_NavigationBarOnSmallScreen", "Enabled");
+      Element_Attribute_Set("MainContent", "Style_NavigationBarOnSmallScreen", "Enabled");
+      Element_Attribute_Set("Header_SidebarToggle", "Style_NavigationBarOnSmallScreen", "Enabled");
+      Element_Attribute_Set("Header", "Style_NavigationBarOnSmallScreen", "Enabled");
+    } else if (App_Property.Features.Sidebar_Elements.Tabs == false){
+      Element_Attribute_Set("Sidebar", "Style_NavigationBarOnSmallScreen", "Disabled");
+      Element_Attribute_Set("MainContent", "Style_NavigationBarOnSmallScreen", "Disbled");
+      Element_Attribute_Set("Header_SidebarToggle", "Style_NavigationBarOnSmallScreen", "Disabled");
+      Element_Attribute_Set("Header", "Style_NavigationBarOnSmallScreen", "Disabled");
     }
 
 

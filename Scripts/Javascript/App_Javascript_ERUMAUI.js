@@ -228,14 +228,19 @@ function Tabs_ChangeTab(ButtonID, Layout){
 	if (document.getElementById(Tabs_Button_ID).getAttribute("Tabs_UseHeaderTitle") == "true"){
 		document.getElementById("pageElement_Header_Title").innerHTML = Tabs_Button_TabTitle;
 	}
-	if (Element_Attribute_Get(Tabs_Button_ID, "Tabs_UseFullContainer") == null){
-		App_Property.Page.MainView.UseFullContainer = Tabs_MainView_OriginalState;
-	} else if (Element_Attribute_Get(Tabs_Button_ID, "Tabs_UseFullContainer") == "true"){
-		App_Property.Page.MainView.UseFullContainer = true;
-	} else if (Element_Attribute_Get(Tabs_Button_ID, "Tabs_UseFullContainer") == "false"){
-		App_Property.Page.MainView.UseFullContainer = false;
+	if (App_Property != null || App_Property != undefined){
+		if (Element_Attribute_Get(Tabs_Button_ID, "Tabs_UseFullContainer") == null){
+			
+		} else if (Element_Attribute_Get(Tabs_Button_ID, "Tabs_UseFullContainer") == "true"){
+			App_Property.Page.MainView.UseFullContainer = true;
+			Startup_Page_ApplyConfigurations("QuickChange", "ContainerOnly");
+		} else if (Element_Attribute_Get(Tabs_Button_ID, "Tabs_UseFullContainer") == "false"){
+			App_Property.Page.MainView.UseFullContainer = false;
+			Startup_Page_ApplyConfigurations("QuickChange", "ContainerOnly");
+		}
+		
 	}
-	Startup_Page_ApplyConfigurations("QuickChange", "ContainerOnly");
+	
 	Tabs_Target_Container.setAttribute("Tabs_CurrentTab", Tabs_Button_Target_Tab);
 }
 
@@ -446,3 +451,21 @@ TextAreas.forEach(TextArea_Element => {
 		});
 	}
 });
+
+function TextArea_SnapToSize_All(){
+	TextAreas = document.querySelectorAll(".Input_Text_Long");
+	TextAreas.forEach(TextArea_Element => {
+		if (TextArea_Element.getAttribute("Autoresize") == "true"){
+			TextArea_Element.style.height = 'auto';
+			TextArea_Element.style.height = ((TextArea_Element.scrollHeight) - 20) + 'px';
+		}
+	});
+}
+
+function TextArea_SnapToSize(ID){
+	TextAreas = document.getElementById(ID);
+	if (TextAreas.getAttribute("Autoresize") == "true"){
+		TextAreas.style.height = 'auto';
+		TextAreas.style.height = ((TextAreas.scrollHeight) - 20) + 'px';
+	}
+}
