@@ -69,11 +69,15 @@
     .LoadingScreen_Splash_Window_Main{
         background-color: unset;
     }
-    .LoadingScreen_Splash_Window_Loader{
+    .LoadingScreen_Splash_Window_Loader, .LoadingScreen_Simple_Bottom_Loader{
         width: 300px;
         background-color: unset;
         margin-left: 50px;
         margin-right: 50px;
+        border-radius: 25px;
+    }
+    .LoadingScreen_Splash_Window_Loader > .General_Loading_Bar{
+        border-radius: 25px;
     }
 }
 

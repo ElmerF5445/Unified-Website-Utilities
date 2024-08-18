@@ -171,7 +171,7 @@ body{
     width: 100%;
     height: 100%;
     display: grid;
-    grid-template-rows: 1fr 75px;
+    grid-template-rows: 1fr 100px;
 }
 
 .LoadingScreen_Simple > *{
@@ -209,7 +209,7 @@ body{
 
 .LoadingScreen_Simple_Bottom_Loader{
     max-width: 500px;
-    border-radius: 5px;
+    border-radius: 5px;transform: translateY(-50px);
 }
 
 .LoadingScreen_Simple_Bottom_Copyright{
@@ -217,7 +217,8 @@ body{
     grid-template-columns: 30px 1fr;
     align-items: center;
     grid-gap: 10px;
-    margin-top: 15px;
+    /* margin-top: 15px; */
+	transform: translateY(-10px);
 }
 
 .LoadingScreen_Simple_Bottom_Copyright_Icon{
@@ -234,7 +235,7 @@ body{
     width: 100%;
     height: 100%;
     display: grid;
-    grid-template-rows: 1fr 75px;
+    grid-template-rows: 1fr 100px;
     align-items: center;
     justify-content: center;
 }
@@ -311,7 +312,8 @@ body{
     grid-template-columns: 30px 1fr;
     align-items: center;
     grid-gap: 10px;
-    margin-top: 15px;
+    /* margin-top: 15px; */
+	transform: translateY(-10px);
 }
 
 .LoadingScreen_Splash_Bottom_Copyright_Title{

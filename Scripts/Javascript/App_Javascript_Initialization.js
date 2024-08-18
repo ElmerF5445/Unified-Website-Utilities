@@ -91,7 +91,7 @@ function Startup_Check_Session() {
 }
 
 var PropertiesFileURL = "Scripts/Javascript/App_Properties.json";
-let App_Page_Properties = {};
+let App_Data = {};
 async function Startup_Fetch_File_Properties(URL) {
   try {
     const JSON_File = await fetch(URL);
@@ -109,14 +109,16 @@ async function Startup_Fetch_File_Properties(URL) {
 Startup_Fetch_File_Properties(PropertiesFileURL)
   .then((data) => {
     if (data !== null) {
-        App_Page_Properties = data;
+        App_Data = data;
+        console.log(App_Data);
         console.log("JSON file '" + PropertiesFileURL + "' loaded.");
         console.log("Searching for correct page file name...");
-        for (a = 0; a < App_Page_Properties.length; a++){
-            if (App_Page_Properties[a].Page_File == App_CurrentPageName){
+        for (a = 0; a < App_Data.App_Properties.length; a++){
+            if (App_Data.App_Properties[a].Page_File == App_CurrentPageName){
                 console.log("First match found at " + a);
-                App_Property = App_Page_Properties[a].Page_Property;
-                App_Property_OriginalState = App_Property;
+                App_Info = App_Data.App_Info;
+                App_Property = App_Data.App_Properties[a].Page_Property;
+                App_Property_OriginalState = App_Data.App_Properties[a];
                 console.log("Set App_Property to current page property data.");
                 console.log("Loading success.");
                 Startup_Page_ApplyConfigurations();
