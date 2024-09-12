@@ -108,6 +108,7 @@
 	--BG-Color-Button-Secondary-Border-Primary-Focus: #2f2f2f;
 	--BG-Color-Button-Secondary-Border-Secondary-Focus: #2f2f2f;
 
+	/* Dependent on values above */
 	--BG-Color-Button-General: var(--BG-Color-Button-Secondary);
 	--BG-Color-Button-General-Text: white;
 	--BG-Color-Button-General-Hover: var(--BG-Color-Hover);

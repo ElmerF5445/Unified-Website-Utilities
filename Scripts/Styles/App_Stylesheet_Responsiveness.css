@@ -23,8 +23,10 @@
         /* width: fit-content; */
     }
     .Ribbon_Section{
-        height: 35px;
-
+        /* height: 35px; */
+    }
+    .Ribbon_Section_Item_Text{
+        display: none;
     }
 }
 

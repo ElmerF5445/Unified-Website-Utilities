@@ -4,7 +4,7 @@
         "Version_Title": "1.0",
         "Version_Number": "1.0",
         "Version_CompilationDate": "18 August 2024",
-        "Copyright_Title": "Content By ElmerF 2025",
+        "Copyright_Title": "Content By ElmerF 2024",
         "Copyright_Icon": "Assets/Icons/ContentByElmerF.png",
         "Key_Prefix": "ERUMAUI"
     },
@@ -89,6 +89,89 @@
                     "Ribbon": true,
                     "Toasts": true,
                     "Projects": true
+                }
+            }
+        },
+        {
+            "Page_File": "ERUMAUI_Settings.html",
+            "Page_Property": {
+                "TitleBar_Title": "ERUMA UI",
+                "Page": {
+                    "Title": "Settings",
+                    "Icon": "Assets/Icons/icon_settings.png",
+                    "MainView": {
+                        "UseFullContainer": false
+                    }
+                },
+                "Header": {
+                    "Title": "ERUMA UI Settings",
+                    "Icon": "Assets/Icons/icon_settings.png",
+                    "Menu_Contents": {
+                        "PageNavigation": [
+                            {
+                                "Title": "App Template",
+                                "Link": "App_Template.html",
+                                "Icon": "Assets/Icons/icon_home.png"
+                            },
+                            {
+                                "Title": "Settings",
+                                "Link": "App_UniversalSettings.html",
+                                "Icon": "Assets/Icons/icon_settings.png"
+                            },
+                            {
+                                "Title": "Template 2",
+                                "Link": "Pages/App_Template copy.html",
+                                "Icon": "Assets/Icons/icon_settings.png"
+                            }
+                            
+                        ],
+                        "Actions": [
+                            {
+                                "Title": "Action 1",
+                                "Link": null,
+                                "Icon": "Assets/Icons/icon_home.png",
+                                "OnclickFunction": null,
+                                "CloseAfterClick": false
+                            },
+                            {
+                                "Title": "Action 2",
+                                "Link": null,
+                                "Icon": "Assets/Icons/icon_home.png",
+                                "OnclickFunction": null,
+                                "CloseAfterClick": false
+                            }
+                        ]
+                    }
+                },
+                "Sidebar": {
+                    "HideWhenCollapsed": false,
+                    "PushContentWhenExpanded": false,
+                    "Width_Expanded": 300,
+                    "Width_Collapsed": 40
+                },
+                "LoadingScreen": {
+                    "Configuration": "Simple"
+                },
+                "Features": {
+                    "Header": true,
+                    "Sidebar": true,
+                    "Sidebar_Elements": {
+                        "Toggle": true,
+                        "Container": true,
+                        "Tabs": true
+                    },
+                    "ClockScreen": true,
+                    "LoadingScreen": true,
+                    "StatusBar": true,
+                    "StatusBar_Elements": {
+                        "EnableAll": true,
+                        "Clock": true,
+                        "Battery": true,
+                        "Connection": true
+                    },
+                    "Ribbon": true,
+                    "Toasts": true,
+                    "Projects": false
                 }
             }
         }

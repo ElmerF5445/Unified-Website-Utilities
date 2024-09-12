@@ -350,15 +350,15 @@ body{
 }
 
 .ClockScreen:hover{
-	transform: scale(1.05);
+	/* transform: scale(1.05); */
 }
 
 .ClockScreen:hover > .ClockScreen_Main{
-	transform: scale(0.9);
+	/* transform: scale(0.9); */
 }
 
 .ClockScreen:hover > .ClockScreen_Extra{
-	opacity: 0%;
+	/* opacity: 0%; */
 }
 
 .ClockScreen_Main{
@@ -397,7 +397,7 @@ body{
 	justify-content: left;
 	align-items: center;
 	padding: 10px;
-	transition-duration: 1s;
+	transition-duration: 0.2s;
 	transition-timing-function: ease-out;
 }
 
@@ -415,7 +415,7 @@ body{
 .Header{
     width: 100%;
     height: 40px;
-    background-color: var(--BG-Color-General-Menus);
+    background-color: var(--BG-Color-Overlay-Header);
     display: grid;
     grid-template-columns: auto 1fr auto;
     /* box-shadow: var(--Element-BoxShadow); */
@@ -703,7 +703,7 @@ body{
     width: 100%;
     position: fixed;
     top: 0;
-    background-color: var(--BG-Color-General-Menus);
+    background-color: var(--BG-Color-General-Ribbon);
     border-bottom: solid var(--Color-Borders);
     display: flex;
     flex-direction: row;
@@ -2195,4 +2195,12 @@ body{
 	pointer-events: none;
 	opacity: 50%;
 	cursor: not-allowed;
+}
+
+*[Opacity="Transparent"]{
+	opacity: 0%;
+}
+
+*[Opacity="Opaque"]{
+	opacity: 100%;
 }
