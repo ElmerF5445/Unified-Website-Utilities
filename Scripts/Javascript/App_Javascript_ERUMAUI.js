@@ -336,12 +336,26 @@ function Buttons_Toggle(ID){
 	var Button_Element = document.getElementById(ID);
 	if (Button_Element.getAttribute("State") == "Active"){
 		Button_Element.setAttribute("State","Inactive");
+		Button_Element.setAttribute("IsActive","false");
 	} else if (Button_Element.getAttribute("State") == "Inactive"){
 		Button_Element.setAttribute("State","Active");
+		Button_Element.setAttribute("IsActive","true");
 	} else if (Button_Element.getAttribute("State") == null){
 		Button_Element.setAttribute("State","Active");
+		Button_Element.setAttribute("IsActive","true");
 	}
 }
+
+let ToggleButtons = document.querySelectorAll(".Toggle");
+ToggleButtons.forEach(ToggleButtons_Element => {
+	if (ToggleButtons_Element.getAttribute("IsActive") == null){
+		if (ToggleButtons_Element.getAttribute("State") == "Active"){
+			ToggleButtons_Element.setAttribute("IsActive", "true");
+		} else {
+			ToggleButtons_Element.setAttribute("IsActive", "false");
+		}
+	}
+});
 
 function Radio_Select(ID){
 	var Radio_Button_Element = document.getElementById(ID);

@@ -27,12 +27,12 @@
                         "PageNavigation": [
                             {
                                 "Title": "App Template",
-                                "Link": "App_Template.html",
+                                "Link": "Pages/App_Template.html",
                                 "Icon": "Assets/Icons/icon_home.png"
                             },
                             {
                                 "Title": "Settings",
-                                "Link": "App_UniversalSettings.html",
+                                "Link": "Pages/ERUMAUI_Settings.html",
                                 "Icon": "Assets/Icons/icon_settings.png"
                             },
                             {
@@ -108,35 +108,35 @@
                     "Icon": "Assets/Icons/icon_settings.png",
                     "Menu_Contents": {
                         "PageNavigation": [
-                            {
-                                "Title": "App Template",
-                                "Link": "App_Template.html",
-                                "Icon": "Assets/Icons/icon_home.png"
-                            },
-                            {
-                                "Title": "Settings",
-                                "Link": "App_UniversalSettings.html",
-                                "Icon": "Assets/Icons/icon_settings.png"
-                            },
-                            {
-                                "Title": "Template 2",
-                                "Link": "Pages/App_Template copy.html",
-                                "Icon": "Assets/Icons/icon_settings.png"
-                            }
+                            
                             
                         ],
                         "Actions": [
                             {
-                                "Title": "Action 1",
+                                "Title": "Back",
                                 "Link": null,
-                                "Icon": "Assets/Icons/icon_home.png",
+                                "Icon": "Assets/Icons/icon_leftArrow.png",
+                                "OnclickFunction": "history.back()",
+                                "CloseAfterClick": false
+                            },
+                            {
+                                "Title": "Save",
+                                "Link": null,
+                                "Icon": "Assets/Icons/iconNew_save.png",
+                                "OnclickFunction": "Settings_Save()",
+                                "CloseAfterClick": false
+                            },
+                            {
+                                "Title": "Import settings",
+                                "Link": null,
+                                "Icon": "Assets/Icons/iconNew_download.png",
                                 "OnclickFunction": null,
                                 "CloseAfterClick": false
                             },
                             {
-                                "Title": "Action 2",
+                                "Title": "Export settings",
                                 "Link": null,
-                                "Icon": "Assets/Icons/icon_home.png",
+                                "Icon": "Assets/Icons/icon_output.png",
                                 "OnclickFunction": null,
                                 "CloseAfterClick": false
                             }

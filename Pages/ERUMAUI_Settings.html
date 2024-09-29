@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="Scripts/Styles/ERUMAUI_Settings.css">
     <link rel="icon" type="image/png" href="Assets/Icons/favicon.png" sizes="96x96" id="Page_Favicon">
 </head>
-<body>
+<body onload="Settings_Initialization_Settings()">
     <!-- <script src="Scripts/Javascript/App_Main.js"></script> -->
     <script src="Scripts/Javascript/FileSaver.js" defer></script>
     <script src="Scripts/Javascript/App_Javascript_Debugging.js" defer></script>
@@ -157,10 +157,10 @@
                 </button>
             </div>
             <div class="Subwindow_Bottom">
-                <div class="Subwindow_Bottom_Button_SecondaryAction" onclick="Subwindows_Close('Settings_Backgrounds_Wallpaper')">
+                <div class="Subwindow_Bottom_Button_SecondaryAction" onclick="Subwindows_Close('Settings_Backgrounds_Wallpaper'), Settings_Image_Changes_Cancel('Settings_Backgrounds_Wallpaper_Input')">
                     Cancel
                 </div>
-                <div class="Subwindow_Bottom_Button_PrimaryAction" id="Settings_Backgrounds_Wallpaper_Button" onclick="">
+                <div class="Subwindow_Bottom_Button_PrimaryAction" id="Settings_Backgrounds_Wallpaper_Button" onclick="Subwindows_Close('Settings_Backgrounds_Wallpaper'), Settings_Image_Changes_Commit('Settings_Backgrounds_Wallpaper_Input', 'Settings_Backgrounds_Wallpaper_Output', 'Settings_Backgrounds_Item_Preview_Image_Wallpaper')">
                     Save changes
                 </div>
             </div>
@@ -187,10 +187,10 @@
                 </button>
             </div>
             <div class="Subwindow_Bottom">
-                <div class="Subwindow_Bottom_Button_SecondaryAction" onclick="Subwindows_Close('Settings_Backgrounds_ClockScreen')">
+                <div class="Subwindow_Bottom_Button_SecondaryAction" onclick="Subwindows_Close('Settings_Backgrounds_ClockScreen'), Settings_Image_Changes_Cancel('Settings_Backgrounds_ClockScreen_Input')">
                     Cancel
                 </div>
-                <div class="Subwindow_Bottom_Button_PrimaryAction" id="Settings_Backgrounds_Wallpaper_Button" onclick="">
+                <div class="Subwindow_Bottom_Button_PrimaryAction" id="Settings_Backgrounds_Wallpaper_Button" onclick="Subwindows_Close('Settings_Backgrounds_ClockScreen'), Settings_Image_Changes_Commit('Settings_Backgrounds_ClockScreen_Input', 'Settings_Backgrounds_ClockScreen_Output', 'Settings_Backgrounds_Item_Preview_Image_ClockScreen')">
                     Save changes
                 </div>
             </div>
@@ -361,7 +361,7 @@
     </header>
     <header class="Ribbon" id="Ribbon" Style_Margin_Sidebar="Enabled" Style_Margin_Header="Enabled">
         <div class="Ribbon_Section" id="Ribbon_Settings">
-			<div class="Ribbon_Section_Item">
+			<div class="Ribbon_Section_Item" onclick="Settings_Save()">
 				<img class="Ribbon_Section_Item_Icon" src="Assets/Icons/iconNew_save.png" />
 				<p class="Ribbon_Section_Item_Text">
 					Save changes
@@ -436,17 +436,16 @@
                             <p class="General_Paragraph">
                                 Select a preset theme below.
                             </p>
-                            <div style="display: grid; grid-template-columns: 1fr 1fr;grid-gap: 10px;">
-                                <button class="General_Button">
-                                    <img src="Assets/Icons/icon_Moon.png" class="General_Button_Icon" Position="Left"/>
+                            <div class="Radio" id="Settings_Presets" Radio_ActiveButton="Settings_Presets_Dark">
+                                <div class="Radio_Button" id="Settings_Presets_Dark" onclick="Radio_Select(this.id)" State="Inactive">
+                                    <div class="Radio_Button_Indicator"></div>
                                     Dark mode
-                                </button>
-                                <button class="General_Button">
-                                    <img src="Assets/Icons/icon_Sun.png" class="General_Button_Icon" Position="Left"/>
+                                </div>
+                                <div class="Radio_Button" id="Settings_Presets_Light" onclick="Radio_Select(this.id)" State="Inactive">
+                                    <div class="Radio_Button_Indicator"></div>
                                     Light mode
-                                </button>
-                            </div>
-                            
+                                </div>
+                            </div>                           
                         </div>
                     </div>
                     <div class="Accordion" id="Accordion_Background">
@@ -460,10 +459,26 @@
                             <p class="General_Paragraph">
                                 Select backgrounds for different screens and control whether they appear on certain screens.
                             </p>
+                            <div class="Toggle" id="Settings_Backgrounds_Wallpaper_Blur" onclick="Buttons_Toggle(this.id)" State="Active">
+                                <div class="Toggle_Indicator"></div>
+                                Blur wallpaper
+                            </div>
+                            <div class="Toggle" id="Settings_Backgrounds_Wallpaper_Darken" onclick="Buttons_Toggle(this.id)" State="Active">
+                                <div class="Toggle_Indicator"></div>
+                                Darken wallpaper
+                            </div>
+                            <div class="Toggle" id="Settings_Backgrounds_Wallpaper_Enable" onclick="Buttons_Toggle(this.id)" State="Active">
+                                <div class="Toggle_Indicator"></div>
+                                Enable wallpaper
+                            </div>
+                            <div class="Toggle" id="Settings_Backgrounds_ClockScreen_Enable" onclick="Buttons_Toggle(this.id)" State="Active">
+                                <div class="Toggle_Indicator"></div>
+                                Enable clock screen background
+                            </div>
                             <div class="Settings_Backgrounds">
                                 <button class="General_Button Settings_Backgrounds_Item" onclick="Subwindows_Open('Settings_Backgrounds_Wallpaper')">
                                     <div class="Settings_Backgrounds_Item_Preview">
-                                        <img src="https://elmerf5445.github.io/ERUMA-UI/Assets/Background/ERUMA_UI_3.png" class="Settings_Backgrounds_Item_Preview_Image" loading="lazy">
+                                        <img src="https://elmerf5445.github.io/ERUMA-UI/Assets/Background/ERUMA_UI_3.png" class="Settings_Backgrounds_Item_Preview_Image" id="Settings_Backgrounds_Item_Preview_Image_Wallpaper" loading="lazy">
                                     </div>
                                     <h4 class="Settings_Backgrounds_Item_Title">
                                         Wallpaper
@@ -471,16 +486,17 @@
                                 </button>
                                 <button class="General_Button Settings_Backgrounds_Item" onclick="Subwindows_Open('Settings_Backgrounds_ClockScreen')">
                                     <div class="Settings_Backgrounds_Item_Preview">
-                                        <img src="https://elmerf5445.github.io/ERUMA-UI/Assets/Background/ERUMA_UI_3.png" class="Settings_Backgrounds_Item_Preview_Image" loading="lazy">
+                                        <img src="https://elmerf5445.github.io/ERUMA-UI/Assets/Background/ERUMA_UI_3.png" class="Settings_Backgrounds_Item_Preview_Image" id="Settings_Backgrounds_Item_Preview_Image_ClockScreen" loading="lazy">
                                     </div>
                                     <h4 class="Settings_Backgrounds_Item_Title">
                                         Clock Screen
                                     </h4>
                                 </button>
                             </div>
+                            
                         </div>
                     </div>
-                    <div class="Accordion" id="Accordion_Colors">
+                    <div class="Accordion" id="Accordion_Colors" Display="none">
                         <div class="Accordion_Title" onclick="Accordion_Toggle(this.parentNode.id)">
                             <h2 class="Accordion_Title_Text">
                                 Color pallete
@@ -806,34 +822,34 @@
                             <p class="General_Paragraph">
                                 Control specific visual effects.
                             </p>
-                            <div class="Toggle" id="Toggle_2" onclick="Buttons_Toggle(this.id)" State="Inactive">
+                            <div class="Toggle" id="Settings_Effects_Blur" onclick="Buttons_Toggle(this.id)" State="Active">
                                 <div class="Toggle_Indicator"></div>
                                 Blur effects
                             </div>
-                            <div class="Toggle" id="Toggle_2" onclick="Buttons_Toggle(this.id)" State="Inactive">
+                            <div class="Toggle" id="Settings_Effects_Animations" onclick="Buttons_Toggle(this.id)" State="Active" Display="none">
                                 <div class="Toggle_Indicator"></div>
                                 Animations
                             </div>
-                            <div class="Toggle" id="Toggle_2" onclick="Buttons_Toggle(this.id)" State="Inactive">
+                            <div class="Toggle" id="Settings_Effects_Transitions" onclick="Buttons_Toggle(this.id)" State="Active">
                                 <div class="Toggle_Indicator"></div>
                                 Transition animations
                             </div>
-                            <div class="Toggle" id="Toggle_2" onclick="Buttons_Toggle(this.id)" State="Inactive">
+                            <div class="Toggle" id="Settings_Effects_SmoothScrolling" onclick="Buttons_Toggle(this.id)" State="Active">
                                 <div class="Toggle_Indicator"></div>
                                 Smooth scrolling
                             </div>
                         </div>
                     </div>
-                    <div class="Accordion" id="Accordion_Information">
+                    <div class="Accordion" id="Accordion_Battery" Display="none">
                         <div class="Accordion_Title" onclick="Accordion_Toggle(this.parentNode.id)">
                             <h2 class="Accordion_Title_Text">
-                                Information
+                                Battery
                             </h2>
                             <img class='Accordion_Title_Arrow' src='Assets/Icons/icon_downArrow.png' draggable='false' loading='lazy'/>
                         </div>
                         <div class="Accordion_Content" State="Expanded">
                             <p class="General_Paragraph">
-                                Toggle the display of certain information and labels on the system.
+                                Settings related to battery.
                             </p>
                         </div>
                     </div>
