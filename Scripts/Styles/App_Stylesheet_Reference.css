@@ -31,6 +31,21 @@
 	--BG-Img-Wallpaper-Main-Opacity: 60%;
 	--Element-BackdropBlur: blur(10px);
 	--Debug-ElementOutline: none;
+	--Sidebar-Width-Expanded: 300px;
+	--Sidebar-Width-Collapsed: 40px;
+	--Element-Transition-Delay: 0.4s;
+	--Element-Animation-Duration: 0.5s;
+	--Element-BoxShadow: 0cm 0cm 0.28218705792108cm 0.03527338224013cm rgba( 0, 0, 0, 0.50); 
+	--Element-BoxShadow-Hover: 0cm 0cm 0.28218705792108cm 0.03527338224013cm rgba( 0, 0, 0, 0.50); 
+	--Element-ContentContainer-MarginnedWidth: 70%;
+	--Element-ContentContainer-Padding-Left: 15%;
+	--Element-ContentContainer-Padding-Right: 15%;
+	--Text-Font-Primary: Alexandria, "Trebuchet MS", "Arial";
+	--Text-Font-Secondary: Roboto, "Arial", "Helvetica";
+	--Text-Font-Numbers: Alexandria, "Arial", "Helvetica";
+	--Accent-Color: #654aff;
+	--Accent-Color-Hover: #5537ff;
+	--Accent-Color-Focus: #4625ff;
 }
 
 body[Theme = "Dark"]{
@@ -38,31 +53,15 @@ body[Theme = "Dark"]{
 	/* --BG-Img-Wallpaper-Main-Blur: 20px; */
 	/* --BG-Img-Wallpaper-Main-Opacity: 100%; */
 	
-
-	--Sidebar-Width-Expanded: 300px;
-	--Sidebar-Width-Collapsed: 40px;
-	
-	--Element-Transition-Delay: 0.4s;
-	--Element-Animation-Duration: 0.5s;
-	--Element-BoxShadow: 0cm 0cm 0.28218705792108cm 0.03527338224013cm rgba( 0, 0, 0, 0.50); 
-	--Element-BoxShadow-Hover: 0cm 0cm 0.28218705792108cm 0.03527338224013cm rgba( 0, 0, 0, 0.50); 
 	/* --Element-BoxShadow-Hover: 0cm 0cm 0.28218705792108cm 0.03527338224013cm  var(--Accent-Color-Hover);  */
 	--Element-Icon-Brightness: brightness(1);
-	
-	--Element-ContentContainer-MarginnedWidth: 70%;
-	--Element-ContentContainer-Padding-Left: 15%;
-	--Element-ContentContainer-Padding-Right: 15%;
 
 	--BG-Color-Opacitated: rgba(28, 28, 28, 0.50);
 
-	--Text-Font-Primary: Alexandria, "Trebuchet MS", "Arial";
-	--Text-Font-Secondary: Roboto, "Arial", "Helvetica";
-	--Text-Font-Numbers: Alexandria, "Arial", "Helvetica";
+	
 	--Text-Color: white;
 	
-	--Accent-Color: #8974fb;
-	--Accent-Color-Hover: #9886ff;
-	--Accent-Color-Focus: #664bff;
+	
 
 	--BG-Color-Scrollbar: transparent;
 	--BG-Color-Scrollbar-Thumb: var(--Accent-Color);
@@ -155,30 +154,18 @@ body[Theme = "Light"]{
 	
 	/* --BG-Img-Wallpaper-Main-Darken: 100%; */
 	/* --BG-Img-Wallpaper-Main-Opacity: 60%; */
-	--Sidebar-Width-Expanded: 300px;
-	--Sidebar-Width-Collapsed: 40px;
 	
-	--Element-Transition-Delay: 0.4s;
-	--Element-Animation-Duration: 0.5s;
-	--Element-BoxShadow: 0cm 0cm 0.28218705792108cm 0.03527338224013cm rgba( 0, 0, 0, 0.25); 
-	--Element-BoxShadow-Hover: 0cm 0cm 0.28218705792108cm 0.03527338224013cm rgba( 0, 0, 0, 0.25); 
 	/* --Element-BoxShadow-Hover: 0cm 0cm 0.28218705792108cm 0.03527338224013cm  var(--Accent-Color-Hover);  */
 	--Element-Icon-Brightness: brightness(0);
 	/* --Element-BackdropBlur: blur(10px); */
-	--Element-ContentContainer-MarginnedWidth: 70%;
-	--Element-ContentContainer-Padding-Left: 15%;
-	--Element-ContentContainer-Padding-Right: 15%;
+	
 
 	--BG-Color-Opacitated: rgba(255, 255, 255, 0.5);
 
-	--Text-Font-Primary: Alexandria, "Trebuchet MS", "Arial";
-	--Text-Font-Secondary: Roboto, "Arial", "Helvetica";
-	--Text-Font-Numbers: Alexandria, "Arial", "Helvetica";
+	
 	--Text-Color: #303030;
 	
-	--Accent-Color: #654aff;
-	--Accent-Color-Hover: #5537ff;
-	--Accent-Color-Focus: #4625ff;
+	
 
 	--BG-Color-Scrollbar: transparent;
 	--BG-Color-Scrollbar-Thumb: var(--Accent-Color);
