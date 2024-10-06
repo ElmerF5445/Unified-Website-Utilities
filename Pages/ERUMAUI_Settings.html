@@ -195,6 +195,70 @@
                 </div>
             </div>
         </div>
+        <div class="Modal" id="Settings_Export">
+			<div class="Modal_TitleBar">
+				<h2 class="Modal_TitleBar_Title">
+					Export settings data
+				</h2>
+			</div>
+			<div class="Modal_Content">
+                <p class="General_Paragraph">
+                    Choose a filename here:
+                </p>
+				<div style="display: grid; grid-template-columns: 1fr 125px; grid-gap: 10px">
+                    <input type="text" class="Input_Text" id="Settings_Export_FileName" placeholder="File name here" value="Settings"/>
+                    <p class="General_Paragraph">
+                        .cbe_eruma_s
+                    </p>
+                </div>
+			</div>
+			<div class="Modal_Content_Bottom">
+				<div class="Subwindow_Bottom_Button_SecondaryAction" onclick="Subwindows_Close('Settings_Export')">
+					Cancel
+				</div>
+				<div class="Subwindow_Bottom_Button_PrimaryAction" onclick="Settings_Export()">
+					Export
+				</div>
+			</div>
+		</div>
+        <div class="Modal" id="Settings_Error_Export_FileNameEmpty">
+			<div class="Modal_TitleBar">
+				<h2 class="Modal_TitleBar_Title">
+					Error - Settings not exported
+				</h2>
+			</div>
+			<div class="Modal_Content">
+                <p class="General_Paragraph">
+                    The settings data cannot be exported because the 'filename' field is empty. Please fill the 'filename' field to continue.
+                </p>
+			</div>
+			<div class="Modal_Content_Bottom">
+				<div class="Subwindow_Bottom_Button_PrimaryAction" onclick="Subwindows_Close('Settings_Error_Export_FileNameEmpty')">
+					Close
+				</div>
+			</div>
+		</div>
+        <div class="Modal" id="Settings_Import">
+			<div class="Modal_TitleBar">
+				<h2 class="Modal_TitleBar_Title">
+					Import settings data
+				</h2>
+			</div>
+			<div class="Modal_Content">
+                <p class="General_Paragraph">
+                    Click the button below to import an article file. It only accepts .cbe_eruma_s files, which is the file extension for settings used for ERUMA UI.
+                </p>
+                <input type="file" id="Settings_Import_File" accept=".cbe_eruma_s" class="Input_Text"/>
+			</div>
+			<div class="Modal_Content_Bottom">
+				<div class="Subwindow_Bottom_Button_SecondaryAction" onclick="Subwindows_Close('Settings_Import')">
+					Cancel
+				</div>
+				<div class="Subwindow_Bottom_Button_PrimaryAction" onclick="Settings_Import()">
+					Import
+				</div>
+			</div>
+		</div>
     </div>
     <div class="Toasts" Position="Right" id="Toasts">
         <!-- <div class="Toast">
@@ -208,13 +272,13 @@
         </div> -->
     </div>
     <div class="Overlays" id="Overlays">
-        <div class="Debugger_Console" id="Debugger_Console" style="display: none">
+        <!-- <div class="Debugger_Console" id="Debugger_Console" style="display: none">
 			<div class="Debugger_Console_Results" id="Debugger_Console_Text"></div>
 			<div class="Debugger_Console_CommandEntry">
 				<input class="Debugger_Console_CommandEntry_Input" id="Debugger_Console_CommandEntry_Input"
 					placeholder="Enter console command and press Enter"></input>
 			</div>
-		</div>
+		</div> -->
         <div class="Header_PageNavigation_Menu" id="Header_PageNavigation_Menu" State="Inactive">
             <div class="Header_PageNavigation_Menu_Navigation Header_PageNavigation_Menu_Content">
                 <h1 class="Header_PageNavigation_Menu_Title" id="Header_PageNavigation_Menu_Title">
@@ -367,13 +431,13 @@
 					Save changes
 				</p>
 			</div>
-            <div class="Ribbon_Section_Item">
+            <div class="Ribbon_Section_Item" onclick="Subwindows_Open('Settings_Import')">
 				<img class="Ribbon_Section_Item_Icon" src="Assets/Icons/iconNew_download.png" />
 				<p class="Ribbon_Section_Item_Text">
 					Import settings
 				</p>
 			</div>
-            <div class="Ribbon_Section_Item">
+            <div class="Ribbon_Section_Item" onclick="Subwindows_Open('Settings_Export')">
 				<img class="Ribbon_Section_Item_Icon" src="Assets/Icons/icon_output.png" />
 				<p class="Ribbon_Section_Item_Text">
 					Export settings

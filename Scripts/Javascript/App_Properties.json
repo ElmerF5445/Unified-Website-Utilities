@@ -130,15 +130,15 @@
                                 "Title": "Import settings",
                                 "Link": null,
                                 "Icon": "Assets/Icons/iconNew_download.png",
-                                "OnclickFunction": null,
-                                "CloseAfterClick": false
+                                "OnclickFunction": "Subwindows_Open('Settings_Import')",
+                                "CloseAfterClick": true
                             },
                             {
                                 "Title": "Export settings",
                                 "Link": null,
                                 "Icon": "Assets/Icons/icon_output.png",
-                                "OnclickFunction": null,
-                                "CloseAfterClick": false
+                                "OnclickFunction": "Subwindows_Open('Settings_Export')",
+                                "CloseAfterClick": true
                             }
                         ]
                     }

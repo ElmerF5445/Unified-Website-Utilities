@@ -26,13 +26,17 @@
 	--BG-Img-Wallpaper-Clock: url(../../Assets/Background/Clock_Screen.png);
     --BG-Img-Wallpaper-Loading: url(../../Assets/Background/Splash.png);
 	--BG-Img-Splash: url(../../Assets/Background/Splash.png);
+	--BG-Img-Wallpaper-Main-Blur: 20px;
+	--BG-Img-Wallpaper-Main-Darken: 40%;
+	--BG-Img-Wallpaper-Main-Opacity: 60%;
+	--Element-BackdropBlur: blur(10px);
+	--Debug-ElementOutline: none;
 }
 
 body[Theme = "Dark"]{
-    --Debug-ElementOutline: none;
-	--BG-Img-Wallpaper-Main-Blur: 20px;
-	--BG-Img-Wallpaper-Main-Darken: 60%;
-	--BG-Img-Wallpaper-Main-Opacity: 100%;
+    
+	/* --BG-Img-Wallpaper-Main-Blur: 20px; */
+	/* --BG-Img-Wallpaper-Main-Opacity: 100%; */
 	
 
 	--Sidebar-Width-Expanded: 300px;
@@ -44,7 +48,7 @@ body[Theme = "Dark"]{
 	--Element-BoxShadow-Hover: 0cm 0cm 0.28218705792108cm 0.03527338224013cm rgba( 0, 0, 0, 0.50); 
 	/* --Element-BoxShadow-Hover: 0cm 0cm 0.28218705792108cm 0.03527338224013cm  var(--Accent-Color-Hover);  */
 	--Element-Icon-Brightness: brightness(1);
-	--Element-BackdropBlur: blur(10px);
+	
 	--Element-ContentContainer-MarginnedWidth: 70%;
 	--Element-ContentContainer-Padding-Left: 15%;
 	--Element-ContentContainer-Padding-Right: 15%;
@@ -147,10 +151,10 @@ body[Theme = "Dark"]{
 }
 
 body[Theme = "Light"]{
-    --Debug-ElementOutline: none;
-	--BG-Img-Wallpaper-Main-Blur: 20px;
-	--BG-Img-Wallpaper-Main-Darken: 100%;
-	--BG-Img-Wallpaper-Main-Opacity: 60%;
+    /* --Debug-ElementOutline: none; */
+	
+	/* --BG-Img-Wallpaper-Main-Darken: 100%; */
+	/* --BG-Img-Wallpaper-Main-Opacity: 60%; */
 	--Sidebar-Width-Expanded: 300px;
 	--Sidebar-Width-Collapsed: 40px;
 	
@@ -160,7 +164,7 @@ body[Theme = "Light"]{
 	--Element-BoxShadow-Hover: 0cm 0cm 0.28218705792108cm 0.03527338224013cm rgba( 0, 0, 0, 0.25); 
 	/* --Element-BoxShadow-Hover: 0cm 0cm 0.28218705792108cm 0.03527338224013cm  var(--Accent-Color-Hover);  */
 	--Element-Icon-Brightness: brightness(0);
-	--Element-BackdropBlur: blur(10px);
+	/* --Element-BackdropBlur: blur(10px); */
 	--Element-ContentContainer-MarginnedWidth: 70%;
 	--Element-ContentContainer-Padding-Left: 15%;
 	--Element-ContentContainer-Padding-Right: 15%;

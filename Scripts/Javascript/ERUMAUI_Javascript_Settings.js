@@ -137,8 +137,10 @@ function Settings_Load(){
     }
     if (Settings_Data.Data.Backgrounds.Wallpaper_Darken == "Active"){
         S.style.setProperty("--BG-Img-Wallpaper-Main-Darken", "60%");
+        S.style.setProperty("--BG-Img-Wallpaper-Main-Opacity", "60%");
     } else {
         S.style.setProperty("--BG-Img-Wallpaper-Main-Darken", "100%");
+        S.style.setProperty("--BG-Img-Wallpaper-Main-Opacity", "100%");
     }
     if (Settings_Data.Data.Backgrounds.ClockScreen_Enable == "Active"){
         S.style.setProperty("--BG-Img-Wallpaper-Clock", `url("${Settings_Data.Data.Backgrounds.ClockScreen}")`);
@@ -204,4 +206,33 @@ function Settings_Load_Values(){
     Element_Attribute_Set("Settings_Effects_Animations", "State", Settings_Data.Data.Effects.Animations);
     Element_Attribute_Set("Settings_Effects_Transitions", "State", Settings_Data.Data.Effects.Transitions);
     Element_Attribute_Set("Settings_Effects_SmoothScrolling", "State", Settings_Data.Data.Effects.SmoothScrolling);
+}
+
+function Settings_Export(){
+    if (document.getElementById('Settings_Export_FileName').value != null || document.getElementById('Settings_Export_FileName').value != ""){
+        let Data = Settings_Data;
+        var Data_JSON = JSON.stringify(Data, null, 2);
+        const Data_Blob = new Blob([Data_JSON], {type: 'application/json'});
+        saveAs(Data_Blob, document.getElementById('Settings_Export_FileName').value + ".cbe_eruma_s");
+        Subwindows_Close('Settings_Export');
+        Toasts_CreateToast("Assets/Icons/iconNew_download.png", "Settings  exported", "The file will be downloaded shortly.");
+    } else {
+        Subwindows_Open('AB_Editor_Error_Export_FileNameEmpty');
+    }
+}
+
+function Settings_Import(){
+    var File_Element = document.getElementById("Settings_Import_File");
+    var File_Element_File = File_Element.files[0];
+    const Reader = new FileReader();
+    Reader.onload = function(e){
+        const Contents = e.target.result;
+        const Data_JSON = JSON.parse(Contents);
+        Settings_Data = Data_JSON;
+        Settings_Load_Values();
+        Toasts_CreateToast("Assets/Icons/iconNew_download.png", "Settings imported", `Settings data successfully loaded. Click "Save Changes" to save the configuration.`);
+    }
+
+    Reader.readAsText(File_Element_File);
+    Subwindows_Close("Settings_Import");
 }
