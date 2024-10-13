@@ -2093,7 +2093,7 @@ body{
 	box-shadow: var(--Element-BoxShadow-Focus);
 }
 
-.General_Button_Primary{
+.General_Button_Primary, .General_Button[Primary]{
 	padding: 10px;
 	border-radius: 5px;
 	background-color: var(--BG-Color-Button-Primary);
@@ -2120,7 +2120,7 @@ body{
 }
 
 
-.General_Button_Primary:hover{
+.General_Button_Primary:hover, .General_Button[Primary]:hover{
 	border-color: var(--BG-Color-Button-Primary-Border-Primary-Hover);
 	border-bottom-color: var(--BG-Color-Button-Primary-Border-Secondary-Hover);
 	color: var(--BG-Color-Button-Primary-Text-Hover);
@@ -2128,7 +2128,7 @@ body{
 	box-shadow: var(--Element-BoxShadow-Hover);
 }
 
-.General_Button_Primary:active{
+.General_Button_Primary:active, .General_Button[Primary]:active{
 	border-color: var(--BG-Color-Button-Primary-Border-Primary-Focus);
 	border-bottom-color: var(--BG-Color-Button-Primary-Border-Secondary-Focus);
 	color: var(--BG-Color-Button-Primary-Text-Focus);
