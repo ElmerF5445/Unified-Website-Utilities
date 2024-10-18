@@ -2232,6 +2232,60 @@ body{
 	/* transform: rotate(270deg); */
 }
 
+.Projects_Manifest_List{
+	display: flex;
+    flex-direction: column;
+}
+
+.Projects_Manifest_List_Item{
+	display: flex;
+    flex-direction: column;
+    border-style: solid;
+	border-color: transparent;
+	border-bottom-color: transparent;
+    background-color: transparent;
+    margin-bottom: 10px;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    border-width: 3px;
+}
+
+.Projects_Manifest_List_Item:focus{
+    border-color: var(--Accent-Color);
+}
+
+.Projects_Manifest_List_Item:hover{
+    border-color: var(--BG-Color-Button-Secondary-Border-Primary-Hover);
+	border-bottom-color: var(--BG-Color-Button-Secondary-Border-Secondary-Hover);
+	color: var(--BG-Color-Button-Secondary-Text-Hover);
+	background-color: var(--BG-Color-Button-Secondary-Hover);
+	box-shadow: var(--Element-BoxShadow-Hover);
+}
+
+.Projects_Manifest_List_Item:active{
+    border-color: var(--BG-Color-Button-Secondary-Border-Primary-Focus);
+	border-bottom-color: var(--BG-Color-Button-Secondary-Border-Secondary-Focus);
+	color: var(--BG-Color-Button-Secondary-Text-Focus);
+	background-color: var(--BG-Color-Button-Secondary-Focus);
+	box-shadow: var(--Element-BoxShadow-Focus);
+}
+
+.Projects_Manifest_List_Item_Title{
+    font-family: var(--Text-Font-Primary);
+    color: var(--Text-Color);
+    font-size: 20px;
+    margin: 0;
+}
+
+.Projects_Manifest_List_Item_Title_Data{
+    font-family: var(--Text-Font-Secondary);
+    color: var(--Text-Color);
+    margin: 0;
+    font-size: 15px;
+	opacity: 75%;
+}
+
 *[Display="none"]{
     display: none;
 }
