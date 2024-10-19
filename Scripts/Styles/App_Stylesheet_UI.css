@@ -1913,6 +1913,7 @@ body{
         "Content Controls"
         "Information Controls"
     ;
+	grid-template-columns: 1fr auto;
 	padding: 10px;
 	border-radius: 5px;
 	background-color: var(--BG-Color-Button-General);
