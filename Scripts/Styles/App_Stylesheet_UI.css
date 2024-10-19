@@ -1903,13 +1903,16 @@ body{
 .Projects_List{
 	display: flex;
 	flex-direction: column;
+	padding-top: 10px;
 	/* background-color: blue; */
 }
 
 .Projects_List_Item{
 	display: grid;
-	grid-template-columns: 1fr auto;
-	align-item: center;
+    grid-template-areas: 
+        "Content Controls"
+        "Information Controls"
+    ;
 	padding: 10px;
 	border-radius: 5px;
 	background-color: var(--BG-Color-Button-General);
@@ -1926,13 +1929,30 @@ body{
 	border-color: var(--BG-Color-Button-General-Accent-Hover);
 }
 
-.Projects_List_Item_Information{
-	display: flex;
-	flex-direction: column;
+.Projects_List_Item:focus{
+    outline: solid var(--Accent-Color) 2px;
 }
 
+.Projects_List_Item_Content{
+    grid-area: Content;
+}
+
+.Projects_List_Item_Content_Title{
+    font-family: var(--Text-Font-Primary);
+    color: var(--Text-Color);
+    text-align: left;
+    margin: 0;
+}
+
+.Projects_List_Item_Information{
+	grid-area: Information;
+    display: flex;
+    flex-direction: row;
+}
+
+
 .Projects_List_Item_Information:hover{
-	background-color: var(--BG-Color-Button-General-Hover);
+	/* background-color: var(--BG-Color-Button-General-Hover); */
 }
 
 .Projects_List_Item_Information_Title{
@@ -1954,21 +1974,33 @@ body{
 	opacity: 25%;
 }
 
-.Projects_List_Item_Information_Details_Item:not(:nth-child(1)){
+.Projects_List_Item_Information_Details_Item:not(:nth-child(1)), .Projects_List_Item_Information_Data:not(:nth-child(1)){
 	padding-left: 5px;
 	border-left: solid var(--Color-Borders) 2px;	
+}
+
+.Projects_List_Item_Information_Data{
+    font-family: var(--Text-Font-Secondary);
+    color: var(--Text-Color);
+    text-align: left;
+    opacity: 50%;
+    margin: 0;
 }
 
 .Projects_List_Item_Controls{
 	display: flex;
 	flex-direction: row;
 	align-items: center;
+	grid-area: Controls;
 }
 
 .Projects_List_Item_Controls_Item{
 	border-radius: 5px;
 	padding: 5px;
 	cursor: pointer;
+	display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 
