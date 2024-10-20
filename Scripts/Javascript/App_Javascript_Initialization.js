@@ -431,9 +431,6 @@ function Startup_Page_FinishInitialization() {
       " | " +
       App_Info.Copyright_Title
   );
-  if (App_Property.Features.Projects == true){
-    Projects_Check_Manifest();
-  }
   Element_Attribute_Set("LoadingScreen_Simple", "Opacitation", "Opaque");
   Element_Attribute_Set("LoadingScreen_Splash", "Opacitation", "Opaque");
   setTimeout(LoadingScreen_Hide, 4000);
