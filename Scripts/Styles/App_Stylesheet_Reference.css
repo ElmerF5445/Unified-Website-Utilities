@@ -21,6 +21,18 @@
 	font-weight: normal;
 }
 
+@font-face {
+	font-family: "Linux_Libertine";
+	src: url("../../Assets/Fonts/Linux_Libertine.ttf") format("truetype");
+	font-weight: normal;
+}
+
+@font-face {
+	font-family: "Galderglynn_Titling";
+	src: url("../../Assets/Fonts/Galderglynn_Titling.ttf") format("truetype");
+	font-weight: normal;
+}
+
 :root{
 	--BG-Img-Wallpaper-Main: url(../../Assets/Background/Wallpaper_Main.png);
 	--BG-Img-Wallpaper-Clock: url(../../Assets/Background/Clock_Screen.png);
@@ -46,6 +58,7 @@
 	--Accent-Color: #654aff;
 	--Accent-Color-Hover: #5537ff;
 	--Accent-Color-Focus: #4625ff;
+	--BG-Color-LoadingScreen: black;
 }
 
 body[Theme = "Dark"]{

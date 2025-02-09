@@ -122,6 +122,7 @@ Startup_Fetch_File_Properties(PropertiesFileURL)
                 console.log("Set App_Property to current page property data.");
                 console.log("Loading success.");
                 Startup_Page_ApplyConfigurations();
+                break;
             }
         }
     }

@@ -1,0 +1,9 @@
+.Accordion > div > .General_Button{
+    min-height: 150px;
+    min-width: 150px;
+}
+
+.UWU_WorkArea{
+    background-color: var(--BG-Color-MainView);
+    padding: 10px;
+}

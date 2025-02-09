@@ -1,0 +1,56 @@
+.Accordion{
+    margin-bottom: 10px;
+}
+
+.Accordion:hover{
+    border: solid var(--Color-Borders) 3px;
+}
+
+.Accordion_Title{
+    grid-template-columns: 1fr 40px 40px 40px;
+    grid-gap: 10px;
+}
+
+.ME_Subject {
+    border: solid var(--Color-Borders) 3px;
+    padding: 10px;
+    width: calc(100% - 30px);
+}
+
+.ME_Subject[State = "Collapsed"], .ME_Subject_Period[State = "Collapsed"]{
+    border: solid transparent 3px;
+}
+
+.ME_Subject_Period{
+    border: solid var(--Color-Borders) 3px;
+    padding: 10px;
+    width: calc(100% - 30px);
+    /* font-style: italic; */
+    
+}
+
+.ME_Subject_Period > .Accordion_Title > .Accordion_Title_Text{
+    font-family: var(--Text-Font-Secondary) !important;
+    text-decoration: underline;
+}
+
+.ME_Subject_Period_List_Item{
+    display: grid;
+    grid-template-columns: 1fr 40px 40px;
+    grid-gap: 10px;
+}
+
+.ME_Subject_Period_List_Item:nth-child(odd){
+    background-color: var(--BG-Color-Button-Secondary-Focus);
+}
+
+.ME_Edit_Controls{
+    cursor: pointer;
+    width: 20px;
+    padding: 10px;
+}
+
+.ME_Edit_Controls:hover{
+    background-color: var(--BG-Color-Hover);
+    border-radius: 5px;
+}
